@@ -1,7 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, FlatList, Card } from 'react-native';
 import SearchBar from './SearchBar';
-// import Addresses from './library/addresses.JSON';
+
+
+const addressData = './library/addresses.JSON';
 
 // const ZILLOW_API = "http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=<ZWSID>&address=2114+Bigelow+Ave&citystatezip=Seattle%2C+WA"
 
@@ -18,12 +20,32 @@ export default class App extends React.Component {
     alert(`inside setCityName - query is ${query} cityName is ${this.state.cityName}`)
   }
 
+  getHouseData = (event) => {
+    alert(event);
+  }
+
+
+  const houseList = props => {
+    return (
+      <FlatList
+        data=addressData
+        renderItem={(info) => (
+          <Card
+          cardInfo={info}
+          onItemPressed={this.getHouseData} />
+        )}
+
+      />
+    )
+  }
+
 
   render() {
+
     return (
       <View style={styles.container}>
-        <Text>Welcome to Walk Home!</Text>
         <SearchBar setCityNameCallback={this.setCityName}/>
+        {houseList}
       </View>
     );
   }
