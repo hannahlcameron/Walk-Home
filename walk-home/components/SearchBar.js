@@ -1,7 +1,11 @@
 import React from 'react';
 import { StyleSheet, TextInput, View, Button } from 'react-native';
+import PropTypes from 'prop-types';
 
 export default class App extends React.Component {
+  static propTypes = {
+    setCityNameCallback: PropTypes.func.isRequired
+  }
 
   state = {
     cityName: ''
@@ -13,9 +17,9 @@ export default class App extends React.Component {
     });
   };
 
-  queryCallback = (event) => {
-    alert(event);
-    console.log(event);
+  onSubmitQuery = () => {
+    this.props.setCityNameCallback(this.state.cityName)
+        // alert(`inside onSubmitQuery - cityName is: ${this.state.cityName}` )
   }
 
   render() {
@@ -27,7 +31,7 @@ export default class App extends React.Component {
         value={this.state.cityName}
         onChangeText={this.cityNameChangedHandler}
         />
-        <Button title="Search!" onPress={this.queryCallback}/>
+        <Button title="Search!" onPress={this.onSubmitQuery}/>
       </View>
     );
   }
