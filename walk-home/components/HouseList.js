@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const addressData = './library/addresses.JSON';
 
 
-class houseList extends React.Component {
+class HouseList extends React.Component {
   static propTypes = {
     cityName: PropTypes.string.isRequired
   }
@@ -35,4 +35,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default houseList;
+export default HouseList;

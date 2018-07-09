@@ -33,4 +33,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default card;
+export default Card;

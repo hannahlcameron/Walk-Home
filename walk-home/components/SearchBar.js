@@ -7,8 +7,11 @@ export default class App extends React.Component {
     setCityNameCallback: PropTypes.func.isRequired
   }
 
-  state = {
+  constructor() {
+    super();
+    this.state = {
     cityName: ''
+    }
   }
 
   cityNameChangedHandler = (value) => {

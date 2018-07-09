@@ -1,14 +1,14 @@
 import React from 'react';
-import { StyleSheet, View} from 'react-native';
+import { StyleSheet, View, Text} from 'react-native';
 import SearchBar from './SearchBar';
 import HouseList from './HouseList';
 
-// const ZILLOW_API = "http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=<ZWSID>&address=2114+Bigelow+Ave&citystatezip=Seattle%2C+WA"
-
 class MainContainer extends React.Component {
-
-  state = {
+  constructor() {
+    super();
+    this.state = {
     cityName: ''
+    }
   }
 
   setCityName = (query) => {
@@ -23,7 +23,7 @@ class MainContainer extends React.Component {
     return (
       <View style={styles.container}>
         <SearchBar setCityNameCallback={this.setCityName}/>
-        <HouseList cityName={this.state.cityName}/>
+        <Text>House List Here</Text>
       </View>
     );
   }
