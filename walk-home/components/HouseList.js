@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, ScrollView, Text } from "react-native";
+import { StyleSheet, FlatList, View, Text} from "react-native";
 import Card from "./Card";
 import PropTypes from 'prop-types';
 const addressData = './library/addresses.JSON';
@@ -10,46 +10,60 @@ class HouseList extends React.Component {
   }
 
 
-  // cardList = () => {
-  //   for (let house of addressData) {
-  //     <Card
-  //       onPress={this.getHouseData}
-  //       streetNum={house.streetNum}
-  //       streetName={house.streetName}
-  //       streetType={house.streetType}
-  //       city={house.city}
-  //       state={house.state}
-  //     />
-  //   }
-  //   return <ScrollView style={styles.listContainer}>{this.cardList}</ScrollView>;
-  // };
 
   render() {
-    
-    cardList = () => {
-      for (let house of addressData) {
-        <Card
-          streetNum={house.streetNum}
-          streetName={house.streetName}
-          streetType={house.streetType}
-          city={house.city}
-          state={house.state}
-        />
+
+    let cardList = [];
+    let searchResults;
+
+    if (this.props.cityName === '') {
+      searchResults = null;
+
+    } else if (this.props.cityName === 'seattle') {
+
+      for (let address of addressData) {
+        let house = {
+          "key": address.ID,
+          "streetNum": address.streetNum,
+          "streetName": address.streetName,
+          "streetType": address.streetType,
+          "city": address.city,
+          "state": address.state
+        }
+        cardList.push(house)
       }
 
-    return (
-      <ScrollView>
-        <Text>house cards for {this.props.cityName} here!</Text>
-        {this.cardList}
-      </ScrollView>
-    )
+      searchResults =(
+        <FlatList
+          style={styles.listContainer}
+          data={cardList}
+          renderItem={({info}) => {
+            <Card
+              onPress={this.getHouseData}
+              streetNum={info.house.streetNum}
+              streetName={info.house.streetName}
+              streetType={info.house.streetType}
+              city={info.house.city}
+              state={info.house.state}
+            />}
+          }
+        /> )
+    } else {
+      searchResults = (
+        <View>
+          <Text>`Oops! No houses were found in ${this.state.cityName}`</Text>
+        </View>
+      )
+    }
+
+    return ({searchResults})
   }
 }
 
-// const styles = StyleSheet.create({
-//   listContainer: {
-//     width: "100%"
-//   }
-// });
+const styles = StyleSheet.create({
+  listContainer: {
+    width: "100%"
+  }
+});
 
 export default HouseList;
