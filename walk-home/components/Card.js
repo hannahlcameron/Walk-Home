@@ -12,9 +12,13 @@ class Card extends React.Component {
     state: PropTypes.string.isRequired
   }
 
+  getHouseData = (event) => {
+    alert(`would get zillow data for ${event}`);
+  }
+
   render() {
     return (
-      <TouchableOpacity>
+      <TouchableOpacity onPress={this.getHouseData} >
         <View style={styles.listItem}>
           <Text>WS Here!</Text>
           <Text>Address Here!</Text>
