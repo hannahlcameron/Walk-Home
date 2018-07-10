@@ -9,8 +9,6 @@ class HouseList extends React.Component {
     cityName: PropTypes.string.isRequired
   }
 
-
-
   render() {
 
     let cardList = [];
@@ -56,7 +54,7 @@ class HouseList extends React.Component {
       )
     }
 
-    return ({searchResults})
+    return (searchResults)
   }
 }
 
