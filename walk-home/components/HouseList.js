@@ -49,21 +49,21 @@ class HouseList extends React.Component {
           data={cardList}
           renderItem={({item}) => {
             <Card
-              onPress={this.getHouseData}
+              key={item[0]}
               streetNum={item[1]}
               streetName={item[2]}
               streetType={item[3]}
               city={item[4]}
               state={item[5]}
+
             />}
           }
-          keyExtractor={item => item[0]}
         /> )
 
     } else {
       searchResults = (
         <View>
-          <Text>`Oops! No houses were found in ${this.state.cityName}`</Text>
+          <Text>`Oops! No houses were found in ${this.props.cityName}`</Text>
         </View>
       )
     }

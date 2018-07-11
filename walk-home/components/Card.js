@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 class Card extends React.Component {
   static propTypes = {
-    onPress: PropTypes.func.isRequired,
     streetNum:PropTypes.string.isRequired,
     streetName: PropTypes.string.isRequired,
     streetType: PropTypes.string.isRequired,
