@@ -15,37 +15,51 @@ class HouseList extends React.Component {
     let searchResults;
 
     if (this.props.cityName === '') {
-      searchResults = null;
+      searchResults = (
+        <View>
+          <Text>Enter a city name to get your search going!</Text>
+        </View>)
 
     } else if (this.props.cityName === 'seattle') {
-
-      // for (let address of addressData) {
-        let house = {
-          "key": addressData[0].ID,
-          "streetNum": addressData[0].streetNum,
-          "streetName": addressData[0].streetName,
-          "streetType": addressData[0].streetType,
-          "city": addressData[0].city,
-          "state": addressData[0].state
-        }
-        cardList.push(house)
-      // }
+        // took out for loop - throws error about symbol - need to find an alt way
+        // of looping though the json - for Each?
+        // for (let address of addressData) {
+      let house = [
+        addressData[0].ID,
+        addressData[0].streetNum,
+        addressData[0].streetName,
+        addressData[0].streetType,
+        addressData[0].city,
+        addressData[0].state
+      ]
+        // {
+        //   "key": addressData[0].ID,
+        //   "streetNum": addressData[0].streetNum,
+        //   "streetName": addressData[0].streetName,
+        //   "streetType": addressData[0].streetType,
+        //   "city": addressData[0].city,
+        //   "state": addressData[0].state
+        // }
+      cardList.push(house)
+        // }
 
       searchResults =(
         <FlatList
           style={styles.listContainer}
           data={cardList}
-          renderItem={({info}) => {
+          renderItem={({item}) => {
             <Card
               onPress={this.getHouseData}
-              streetNum={info.streetNum}
-              streetName={info.streetName}
-              streetType={info.streetType}
-              city={info.city}
-              state={info.state}
+              streetNum={item[1]}
+              streetName={item[2]}
+              streetType={item[3]}
+              city={item[4]}
+              state={item[5]}
             />}
           }
+          keyExtractor={item => item[0]}
         /> )
+
     } else {
       searchResults = (
         <View>
@@ -60,7 +74,8 @@ class HouseList extends React.Component {
 
 const styles = StyleSheet.create({
   listContainer: {
-    width: "100%"
+    width: "100%",
+    height: "50%"
   }
 });
 
