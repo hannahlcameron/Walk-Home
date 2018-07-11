@@ -19,17 +19,17 @@ class HouseList extends React.Component {
 
     } else if (this.props.cityName === 'seattle') {
 
-      for (let address of addressData) {
+      // for (let address of addressData) {
         let house = {
-          "key": address.ID,
-          "streetNum": address.streetNum,
-          "streetName": address.streetName,
-          "streetType": address.streetType,
-          "city": address.city,
-          "state": address.state
+          "key": addressData[0].ID,
+          "streetNum": addressData[0].streetNum,
+          "streetName": addressData[0].streetName,
+          "streetType": addressData[0].streetType,
+          "city": addressData[0].city,
+          "state": addressData[0].state
         }
         cardList.push(house)
-      }
+      // }
 
       searchResults =(
         <FlatList
@@ -38,11 +38,11 @@ class HouseList extends React.Component {
           renderItem={({info}) => {
             <Card
               onPress={this.getHouseData}
-              streetNum={info.house.streetNum}
-              streetName={info.house.streetName}
-              streetType={info.house.streetType}
-              city={info.house.city}
-              state={info.house.state}
+              streetNum={info.streetNum}
+              streetName={info.streetName}
+              streetType={info.streetType}
+              city={info.city}
+              state={info.state}
             />}
           }
         /> )
