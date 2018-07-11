@@ -11,7 +11,7 @@ class HouseList extends React.Component {
 
   render() {
 
-    let cardList = [];
+    // let cardList = [];
     let searchResults;
 
     if (this.props.cityName === '') {
@@ -24,46 +24,39 @@ class HouseList extends React.Component {
         // took out for loop - throws error about symbol - need to find an alt way
         // of looping though the json - for Each?
         // for (let address of addressData) {
-      let house = [
-        addressData[0].ID,
-        addressData[0].streetNum,
-        addressData[0].streetName,
-        addressData[0].streetType,
-        addressData[0].city,
-        addressData[0].state
-      ]
-        // {
-        //   "key": addressData[0].ID,
-        //   "streetNum": addressData[0].streetNum,
-        //   "streetName": addressData[0].streetName,
-        //   "streetType": addressData[0].streetType,
-        //   "city": addressData[0].city,
-        //   "state": addressData[0].state
-        // }
-      cardList.push(house)
+      let house =
+      // [
+      //   addressData[0].ID,
+      //   addressData[0].streetNum,
+      //   addressData[0].streetName,
+      //   addressData[0].streetType,
+      //   addressData[0].city,
+      //   addressData[0].state
+      // ]
+        [{
+          "key": 1,
+          "streetNum": 3440,
+          "streetName": "Walnut",
+          "streetType": "Ave SW",
+          "city": "Seattle",
+          "state": "WA"
+        }]
+      // cardList.push(house)
         // }
 
       searchResults =(
         <FlatList
           style={styles.listContainer}
-          data={cardList}
+          data={house}
           renderItem={({item}) => {
-            <Card
-              key={item[0]}
-              streetNum={item[1]}
-              streetName={item[2]}
-              streetType={item[3]}
-              city={item[4]}
-              state={item[5]}
-
-            />}
+            <Text>{item.streetNum}</Text>}
           }
         /> )
 
     } else {
       searchResults = (
         <View>
-          <Text>`Oops! No houses were found in ${this.props.cityName}`</Text>
+          <Text>`Oops! No houses were found in {this.props.cityName}`</Text>
         </View>
       )
     }
