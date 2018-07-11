@@ -12,7 +12,7 @@ class Card extends React.Component {
   }
 
   getHouseData = (event) => {
-    alert(`would get zillow data for ${event}`);
+    alert(`would get zillow data for ${event.target}`);
   }
 
   render() {

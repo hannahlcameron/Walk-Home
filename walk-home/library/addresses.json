@@ -1,7 +1,7 @@
 [
   {
-    "ID": 1,
-    "streetNum": 3440,
+    "key": 1,
+    "streetNum": "3440",
     "streetName": "Walnut",
     "streetType": "Ave SW",
     "city": "Seattle",

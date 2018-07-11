@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, ScrollView, View, Text} from "react-native";
 import Card from "./Card";
 import PropTypes from 'prop-types';
-// const addressData = './library/addresses.JSON';
+const addressData = './library/addresses.JSON';
 
 class HouseList extends React.Component {
   static propTypes = {
@@ -24,7 +24,6 @@ class HouseList extends React.Component {
         // took out for loop - throws error about symbol - need to find an alt way
         // of looping though the json - for Each?
         // for (let address of addressData) {
-      let house =
       // [
       //   addressData[0].ID,
       //   addressData[0].streetNum,
@@ -33,7 +32,7 @@ class HouseList extends React.Component {
       //   addressData[0].city,
       //   addressData[0].state
       // ]
-        [{
+      let house = [{
           "key": 1,
           "streetNum": "3440",
           "streetName": "Walnut",
@@ -44,11 +43,10 @@ class HouseList extends React.Component {
       // cardList.push(house)
         // }
 
-
       searchResults =(
         <ScrollView style={styles.listContainer}>
           <Card
-            key={house[0].ID}
+            key={house[0].key}
             streetNum={house[0].streetNum}
             streetName={house[0].streetName}
             streetType={house[0].streetType}
