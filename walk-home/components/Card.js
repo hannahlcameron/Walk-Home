@@ -20,7 +20,8 @@ class Card extends React.Component {
       <TouchableOpacity onPress={this.getHouseData} >
         <View style={styles.listItem}>
           <Text>WS Here!</Text>
-          <Text>`${this.props.streetNum}`</Text>
+          <Text>{this.props.streetNum} {this.props.streetName} {this.props.streetType}</Text>
+            <Text>{this.props.city} {this.props.state}</Text>
         </View>
       </TouchableOpacity>
     )

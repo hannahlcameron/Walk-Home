@@ -1,8 +1,8 @@
 import React from "react";
-import { StyleSheet, FlatList, View, Text} from "react-native";
+import { StyleSheet, ScrollView, View, Text} from "react-native";
 import Card from "./Card";
 import PropTypes from 'prop-types';
-const addressData = './library/addresses.JSON';
+// const addressData = './library/addresses.JSON';
 
 class HouseList extends React.Component {
   static propTypes = {
@@ -35,7 +35,7 @@ class HouseList extends React.Component {
       // ]
         [{
           "key": 1,
-          "streetNum": 3440,
+          "streetNum": "3440",
           "streetName": "Walnut",
           "streetType": "Ave SW",
           "city": "Seattle",
@@ -44,14 +44,18 @@ class HouseList extends React.Component {
       // cardList.push(house)
         // }
 
+
       searchResults =(
-        <FlatList
-          style={styles.listContainer}
-          data={house}
-          renderItem={({item}) => {
-            <Text>{item.streetNum}</Text>}
-          }
-        /> )
+        <ScrollView style={styles.listContainer}>
+          <Card
+            key={house[0].ID}
+            streetNum={house[0].streetNum}
+            streetName={house[0].streetName}
+            streetType={house[0].streetType}
+            city={house[0].city}
+            state={house[0].state}
+            />
+        </ScrollView> )
 
     } else {
       searchResults = (
