@@ -4,6 +4,11 @@ import Card from "./Card";
 import PropTypes from 'prop-types';
 // import JSONData from './library/addresses.JSON';
 
+http://api.walkscore.com/score?format=json&address=
+&lat=
+&lon=
+&transit=1&bike=1&wsapikey=
+
 class HouseList extends React.Component {
   static propTypes = {
     cityName: PropTypes.string.isRequired
@@ -11,7 +16,6 @@ class HouseList extends React.Component {
 
   render() {
 
-    // let cardList = [];
     let searchResults;
 
     if (this.props.cityName === '') {
@@ -40,12 +44,27 @@ class HouseList extends React.Component {
           "streetName": "Walnut",
           "streetType": "Ave SW",
           "city": "Seattle",
-          "state": "WA"
+          "state": "WA",
+          "latitude": 47.5718752,
+          "longitude": 122.3835876
         }]
 
+        http://api.walkscore.com/score?format=json&
+        address=1119%8th%20Avenue%20Seattle%20WA%2098101&lat=47.6085&
+        lon=-122.3295&transit=1&bike=1&wsapikey=<YOUR-WSAPIKEY>
 
-      // cardList.push(house)
-        // }
+        let fullWSURL = encodeURIComponent('http://api.walkscore.com/score?format=json&address={house[0]streetNum} {house[0]streetName} {house[0]streetType} {house[0]city} {house[0]state} {house[0]latitude} {house[0]longitude}')
+
+        function getMoviesFromApiAsync() {
+          return fetch()
+            .then((response) => response.json())
+            .then((responseJson) => {
+              return responseJson.movies;
+            })
+            .catch((error) => {
+              console.error(error);
+            });
+        }
 
       searchResults =(
         <ScrollView style={styles.listContainer}>
