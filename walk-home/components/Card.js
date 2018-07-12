@@ -21,7 +21,7 @@ class Card extends React.Component {
         <View style={styles.listItem}>
           <Text>WS Here!</Text>
           <Text>{this.props.streetNum} {this.props.streetName} {this.props.streetType}</Text>
-            <Text>{this.props.city} {this.props.state}</Text>
+          <Text>{this.props.city} {this.props.state}</Text>
         </View>
       </TouchableOpacity>
     )

@@ -21,7 +21,7 @@ export default class App extends React.Component {
   };
 
   onSubmitQuery = () => {
-    this.props.setCityNameCallback(this.state.cityName)
+    this.props.setCityNameCallback(this.state.cityName.toLowerCase())
         // alert(`inside onSubmitQuery - cityName is: ${this.state.cityName}` )
   }
 

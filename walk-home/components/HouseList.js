@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, ScrollView, View, Text} from "react-native";
 import Card from "./Card";
 import PropTypes from 'prop-types';
-const addressData = './library/addresses.JSON';
+// import JSONData from './library/addresses.JSON';
 
 class HouseList extends React.Component {
   static propTypes = {
@@ -32,7 +32,9 @@ class HouseList extends React.Component {
       //   addressData[0].city,
       //   addressData[0].state
       // ]
-      let house = [{
+      let house =
+      // JSON.parse(JSONData);
+      [{
           "key": 1,
           "streetNum": "3440",
           "streetName": "Walnut",
@@ -40,25 +42,27 @@ class HouseList extends React.Component {
           "city": "Seattle",
           "state": "WA"
         }]
+
+
       // cardList.push(house)
         // }
 
       searchResults =(
         <ScrollView style={styles.listContainer}>
           <Card
-            key={house[0].key}
-            streetNum={house[0].streetNum}
-            streetName={house[0].streetName}
-            streetType={house[0].streetType}
-            city={house[0].city}
-            state={house[0].state}
+            key={house[0]["key"]}
+            streetNum={house[0]["streetNum"]}
+            streetName={house[0]["streetName"]}
+            streetType={house[0]["streetType"]}
+            city={house[0]["city"]}
+            state={house[0]["state"]}
             />
         </ScrollView> )
 
     } else {
       searchResults = (
         <View>
-          <Text>`Oops! No houses were found in {this.props.cityName}`</Text>
+          <Text>Oops! No houses were found in {this.props.cityName}</Text>
         </View>
       )
     }
