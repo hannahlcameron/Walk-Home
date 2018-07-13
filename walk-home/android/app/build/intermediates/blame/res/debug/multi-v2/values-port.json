@@ -4,15 +4,8 @@
             "outputFile": "/Users/hannahlisa/ada/walk-home/Walk-Home/walk-home/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-port/values-port.xml",
             "map": [
                 {
-                    "source": "/Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/9d1c9bbdaaa132b8b44f7800cb444924/res/values-port/values-port.xml",
+                    "source": "/Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.4.0.aar/f9028d8cdbede5ad65c2246c3da29d44/res/values-port/values-port.xml",
                     "from": {
-                        "startLines": "4",
-                        "startColumns": "4",
-                        "startOffsets": "280",
-                        "endColumns": "55",
-                        "endOffsets": "331"
-                    },
-                    "to": {
                         "startLines": "2",
                         "startColumns": "4",
                         "startOffsets": "55",

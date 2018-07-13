@@ -4,16 +4,8 @@
             "outputFile": "/Users/hannahlisa/ada/walk-home/Walk-Home/walk-home/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
             "map": [
                 {
-                    "source": "/Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/9d1c9bbdaaa132b8b44f7800cb444924/res/values-hdpi/values-hdpi.xml",
+                    "source": "/Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.4.0.aar/f9028d8cdbede5ad65c2246c3da29d44/res/values-hdpi-v4/values-hdpi-v4.xml",
                     "from": {
-                        "startLines": "4",
-                        "startColumns": "4",
-                        "startOffsets": "286",
-                        "endLines": "8",
-                        "endColumns": "13",
-                        "endOffsets": "558"
-                    },
-                    "to": {
                         "startLines": "2",
                         "startColumns": "4",
                         "startOffsets": "55",

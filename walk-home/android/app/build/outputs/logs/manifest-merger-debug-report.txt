@@ -5,8 +5,15 @@ INJECTED from /Users/hannahlisa/ada/walk-home/Walk-Home/walk-home/android/app/sr
 INJECTED from /Users/hannahlisa/ada/walk-home/Walk-Home/walk-home/android/app/src/main/AndroidManifest.xml:1:1-26:12
 INJECTED from /Users/hannahlisa/ada/walk-home/Walk-Home/walk-home/android/app/src/main/AndroidManifest.xml:1:1-26:12
 MERGED from [com.facebook.react:react-native:0.55.4] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/react-native-0.55.4.aar/89ea03c3b61293a71108bb5a8aeab58a/AndroidManifest.xml:2:1-15:12
-MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/9d1c9bbdaaa132b8b44f7800cb444924/AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:support-v4:23.0.1] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-v4-23.0.1.aar/b59818645fcbb4a3512934aad12996b9/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.4.0.aar/f9028d8cdbede5ad65c2246c3da29d44/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:animated-vector-drawable:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.4.0.aar/7a4f5683fe6ecf2a37f408146b6d1aae/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-vector-drawable:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.4.0.aar/9e50b21a8ecf834283f7a916152a4bd1/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-v4-25.4.0.aar/d1ec187fd7292490f7ef2805b578c66e/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-fragment-25.4.0.aar/81de6a85e308b7e3417dc9b4ad448fbd/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-media-compat:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.4.0.aar/85ab97b2d68186ddd32a3297bb85deef/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-utils:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.4.0.aar/e18f3433373fef48baa22a39b2bf8b69/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-ui:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.4.0.aar/866542c6320d908af3a3b29e82652475/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-compat:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-compat-25.4.0.aar/e13ad022028f2dc1990d3702f6911ca8/AndroidManifest.xml:17:1-31:12
 MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/textlayoutbuilder-1.0.0.aar/59162ca70d7113831f677c841f59f76f/AndroidManifest.xml:10:1-18:12
 MERGED from [com.facebook.fresco:fresco:1.3.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/fresco-1.3.0.aar/cf6f59e0f04e51dde90c4cae0e3d85bf/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.3.0.aar/53dc3db61d465cfaf8abf7b1d24494dc/AndroidManifest.xml:2:1-9:12
@@ -47,10 +54,24 @@ application
 ADDED from /Users/hannahlisa/ada/walk-home/Walk-Home/walk-home/android/app/src/main/AndroidManifest.xml:7:5-24:19
 MERGED from [com.facebook.react:react-native:0.55.4] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/react-native-0.55.4.aar/89ea03c3b61293a71108bb5a8aeab58a/AndroidManifest.xml:13:5-20
 MERGED from [com.facebook.react:react-native:0.55.4] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/react-native-0.55.4.aar/89ea03c3b61293a71108bb5a8aeab58a/AndroidManifest.xml:13:5-20
-MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/9d1c9bbdaaa132b8b44f7800cb444924/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/9d1c9bbdaaa132b8b44f7800cb444924/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.0.1] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-v4-23.0.1.aar/b59818645fcbb4a3512934aad12996b9/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.0.1] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-v4-23.0.1.aar/b59818645fcbb4a3512934aad12996b9/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.4.0.aar/f9028d8cdbede5ad65c2246c3da29d44/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.4.0.aar/f9028d8cdbede5ad65c2246c3da29d44/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:animated-vector-drawable:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.4.0.aar/7a4f5683fe6ecf2a37f408146b6d1aae/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:animated-vector-drawable:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.4.0.aar/7a4f5683fe6ecf2a37f408146b6d1aae/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.4.0.aar/9e50b21a8ecf834283f7a916152a4bd1/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.4.0.aar/9e50b21a8ecf834283f7a916152a4bd1/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-v4:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-v4-25.4.0.aar/d1ec187fd7292490f7ef2805b578c66e/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-v4-25.4.0.aar/d1ec187fd7292490f7ef2805b578c66e/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-fragment-25.4.0.aar/81de6a85e308b7e3417dc9b4ad448fbd/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-fragment-25.4.0.aar/81de6a85e308b7e3417dc9b4ad448fbd/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.4.0.aar/85ab97b2d68186ddd32a3297bb85deef/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.4.0.aar/85ab97b2d68186ddd32a3297bb85deef/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.4.0.aar/e18f3433373fef48baa22a39b2bf8b69/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.4.0.aar/e18f3433373fef48baa22a39b2bf8b69/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.4.0.aar/866542c6320d908af3a3b29e82652475/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.4.0.aar/866542c6320d908af3a3b29e82652475/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-compat-25.4.0.aar/e13ad022028f2dc1990d3702f6911ca8/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-compat-25.4.0.aar/e13ad022028f2dc1990d3702f6911ca8/AndroidManifest.xml:25:5-29:19
 MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/soloader-0.1.0.aar/ef7c0ad7ab69731d7f9e179ec7854e3d/AndroidManifest.xml:3:3-17
 MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/soloader-0.1.0.aar/ef7c0ad7ab69731d7f9e179ec7854e3d/AndroidManifest.xml:3:3-17
 MERGED from [org.webkit:android-jsc:r174650] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/android-jsc-r174650.aar/6dcdc4c3ed46a8bd1244a8020d5572c4/AndroidManifest.xml:2:3-17
@@ -95,10 +116,24 @@ INJECTED from /Users/hannahlisa/ada/walk-home/Walk-Home/walk-home/android/app/sr
 INJECTED from /Users/hannahlisa/ada/walk-home/Walk-Home/walk-home/android/app/src/main/AndroidManifest.xml
 MERGED from [com.facebook.react:react-native:0.55.4] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/react-native-0.55.4.aar/89ea03c3b61293a71108bb5a8aeab58a/AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.55.4] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/react-native-0.55.4.aar/89ea03c3b61293a71108bb5a8aeab58a/AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/9d1c9bbdaaa132b8b44f7800cb444924/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/9d1c9bbdaaa132b8b44f7800cb444924/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.0.1] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-v4-23.0.1.aar/b59818645fcbb4a3512934aad12996b9/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.0.1] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-v4-23.0.1.aar/b59818645fcbb4a3512934aad12996b9/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.4.0.aar/f9028d8cdbede5ad65c2246c3da29d44/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.4.0.aar/f9028d8cdbede5ad65c2246c3da29d44/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.4.0.aar/7a4f5683fe6ecf2a37f408146b6d1aae/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.4.0.aar/7a4f5683fe6ecf2a37f408146b6d1aae/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.4.0.aar/9e50b21a8ecf834283f7a916152a4bd1/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-vector-drawable:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.4.0.aar/9e50b21a8ecf834283f7a916152a4bd1/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-v4-25.4.0.aar/d1ec187fd7292490f7ef2805b578c66e/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-v4-25.4.0.aar/d1ec187fd7292490f7ef2805b578c66e/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-fragment-25.4.0.aar/81de6a85e308b7e3417dc9b4ad448fbd/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-fragment-25.4.0.aar/81de6a85e308b7e3417dc9b4ad448fbd/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.4.0.aar/85ab97b2d68186ddd32a3297bb85deef/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.4.0.aar/85ab97b2d68186ddd32a3297bb85deef/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-utils:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.4.0.aar/e18f3433373fef48baa22a39b2bf8b69/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.4.0.aar/e18f3433373fef48baa22a39b2bf8b69/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-ui:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.4.0.aar/866542c6320d908af3a3b29e82652475/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.4.0.aar/866542c6320d908af3a3b29e82652475/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-compat-25.4.0.aar/e13ad022028f2dc1990d3702f6911ca8/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-compat-25.4.0.aar/e13ad022028f2dc1990d3702f6911ca8/AndroidManifest.xml:21:5-23:58
 MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/textlayoutbuilder-1.0.0.aar/59162ca70d7113831f677c841f59f76f/AndroidManifest.xml:14:5-16:41
 MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/textlayoutbuilder-1.0.0.aar/59162ca70d7113831f677c841f59f76f/AndroidManifest.xml:14:5-16:41
 MERGED from [com.facebook.fresco:fresco:1.3.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/fresco-1.3.0.aar/cf6f59e0f04e51dde90c4cae0e3d85bf/AndroidManifest.xml:5:5-7:41
@@ -117,6 +152,8 @@ MERGED from [com.facebook.fresco:fbcore:1.3.0] /Users/hannahlisa/.gradle/caches/
 MERGED from [com.facebook.fresco:fbcore:1.3.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/fbcore-1.3.0.aar/425f029cd559864b4f1bd562b13a1c9f/AndroidManifest.xml:5:5-7:41
 INJECTED from /Users/hannahlisa/ada/walk-home/Walk-Home/walk-home/android/app/src/main/AndroidManifest.xml
 INJECTED from /Users/hannahlisa/ada/walk-home/Walk-Home/walk-home/android/app/src/main/AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.4.0.aar/f9028d8cdbede5ad65c2246c3da29d44/AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
 		INJECTED from /Users/hannahlisa/ada/walk-home/Walk-Home/walk-home/android/app/src/main/AndroidManifest.xml
 		ADDED from /Users/hannahlisa/ada/walk-home/Walk-Home/walk-home/android/app/src/main/AndroidManifest.xml
@@ -125,6 +162,28 @@ INJECTED from /Users/hannahlisa/ada/walk-home/Walk-Home/walk-home/android/app/sr
 		INJECTED from /Users/hannahlisa/ada/walk-home/Walk-Home/walk-home/android/app/src/main/AndroidManifest.xml
 		ADDED from /Users/hannahlisa/ada/walk-home/Walk-Home/walk-home/android/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/hannahlisa/ada/walk-home/Walk-Home/walk-home/android/app/src/main/AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:appcompat-v7:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.4.0.aar/f9028d8cdbede5ad65c2246c3da29d44/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:animated-vector-drawable:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.4.0.aar/7a4f5683fe6ecf2a37f408146b6d1aae/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:animated-vector-drawable:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.4.0.aar/7a4f5683fe6ecf2a37f408146b6d1aae/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.4.0.aar/9e50b21a8ecf834283f7a916152a4bd1/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.4.0.aar/9e50b21a8ecf834283f7a916152a4bd1/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-v4:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-v4-25.4.0.aar/d1ec187fd7292490f7ef2805b578c66e/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-v4:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-v4-25.4.0.aar/d1ec187fd7292490f7ef2805b578c66e/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-fragment-25.4.0.aar/81de6a85e308b7e3417dc9b4ad448fbd/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-fragment-25.4.0.aar/81de6a85e308b7e3417dc9b4ad448fbd/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.4.0.aar/85ab97b2d68186ddd32a3297bb85deef/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.4.0.aar/85ab97b2d68186ddd32a3297bb85deef/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.4.0.aar/e18f3433373fef48baa22a39b2bf8b69/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.4.0.aar/e18f3433373fef48baa22a39b2bf8b69/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.4.0.aar/866542c6320d908af3a3b29e82652475/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.4.0.aar/866542c6320d908af3a3b29e82652475/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-compat-25.4.0.aar/e13ad022028f2dc1990d3702f6911ca8/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/support-compat-25.4.0.aar/e13ad022028f2dc1990d3702f6911ca8/AndroidManifest.xml:26:9-28:38
+	android:value
+		ADDED from [com.android.support:appcompat-v7:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.4.0.aar/f9028d8cdbede5ad65c2246c3da29d44/AndroidManifest.xml:28:13-35
+	android:name
+		ADDED from [com.android.support:appcompat-v7:25.4.0] /Users/hannahlisa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.4.0.aar/f9028d8cdbede5ad65c2246c3da29d44/AndroidManifest.xml:27:13-51
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 IMPLIED from /Users/hannahlisa/ada/walk-home/Walk-Home/walk-home/android/app/src/main/AndroidManifest.xml:1:1-26:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
 uses-permission#android.permission.READ_PHONE_STATE
