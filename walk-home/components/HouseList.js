@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, ScrollView, View, Text} from "react-native";
 import Card from "./Card";
 import PropTypes from 'prop-types';
+import { WSAPI_KEY } from 'react-native-dotenv';
 // import JSONData from './library/addresses.JSON';
 
 class HouseList extends React.Component {
@@ -20,7 +21,7 @@ class HouseList extends React.Component {
           <Text>Enter a city name to get your search going!</Text>
         </View>)
 
-    } else if (this.props.cityName === 'seattle') {
+    } else if (this.props.cityName.toLowerCase() === 'seattle') {
         // took out for loop - throws error about symbol - need to find an alt way
         // of looping though the json - for Each?
         // for (let address of addressData) {
@@ -45,19 +46,28 @@ class HouseList extends React.Component {
           "longitude": -122.3835876
         }];
 
+        let wsURL = 'http://api.walkscore.com/score?format=json&address=3440%20Walnut%20Ave%20SW%20Seattle%20WA&lat=47.5718752&lon=-122.3835876&wsapikey='+ WSAPI_KEY
 
-
-      searchResults =(
-        <ScrollView style={styles.listContainer}>
-          <Card
-            key={house[0]["key"]}
-            streetNum={house[0]["streetNum"]}
-            streetName={house[0]["streetName"]}
-            streetType={house[0]["streetType"]}
-            city={house[0]["city"]}
-            state={house[0]["state"]}
-            />
-        </ScrollView> )
+        return fetch(wsURL)
+          .then((response) => response.json())
+          .then((responseJson) => {
+            console.log('in fetch ... .then');
+            console.log(responseJson.walkscore);
+            searchResults =(
+              <ScrollView style={styles.listContainer}>
+                <Card
+                  streetNum={house[0]["streetNum"]}
+                  streetName={house[0]["streetName"]}
+                  streetType={house[0]["streetType"]}
+                  city={house[0]["city"]}
+                  state={house[0]["state"]}
+                  />
+              </ScrollView> )
+          })
+          .catch((error) => {
+            console.log('in fetch .. .catch');
+            console.log(error);
+          });
 
     } else {
       searchResults = (
