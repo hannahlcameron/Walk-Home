@@ -17,4 +17,12 @@ yarn-debug.log*
 yarn-error.log*
 
 .env
-.gradle
+
+# Generated files
+bin/
+gen/
+out/
+
+# Gradle files
+.gradle/
+build/
