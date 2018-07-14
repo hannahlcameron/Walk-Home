@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, ScrollView, View, Text} from "react-native";
 import Card from "./Card";
 import PropTypes from 'prop-types';
-import { WSAPI_KEY } from 'react-native-dotenv';
+
 // import axios from "react-native-axios";
 // import JSONData from './library/addresses.JSON';
 
@@ -19,7 +19,7 @@ const house =
   "longitude": -122.3835876
 }];
 
-const wsURL = 'http://api.walkscore.com/score?format=json&address=3440%20Walnut%20Ave%20SW%20Seattle%20WA&lat=47.5718752&lon=-122.3835876&wsapikey=' + WSAPI_KEY
+// const wsURL = 'http://api.walkscore.com/score?format=json&address=3440%20Walnut%20Ave%20SW%20Seattle%20WA&lat=47.5718752&lon=-122.3835876&wsapikey=' + WSAPI_KEY
 
 class HouseList extends React.Component {
   static propTypes = {
@@ -33,8 +33,8 @@ class HouseList extends React.Component {
     }
   }
 
-  componentDidMount() {
-    console.log('starting API CALL');
+  // componentDidMount() {
+  //   console.log('starting API CALL');
 
     // axios.get(wsURL)
     //   .then(function (response) {
@@ -60,7 +60,7 @@ class HouseList extends React.Component {
     //   console.log('in fetch .catch');
     //   console.log(error);
     // });
-  }
+  // }
 
   render() {
     let searchResults;
@@ -94,7 +94,6 @@ class HouseList extends React.Component {
     return (searchResults)
 
   }
-
 }
 
 export default HouseList;
@@ -137,20 +136,7 @@ export default HouseList;
     //       //   addressData[0].state
     //       // ]
     //
-    //         let wsURL = 'http://api.walkscore.com/score?format=json&address=3440%20Walnut%20Ave%20SW%20Seattle%20WA&lat=47.5718752&lon=-122.3835876&wsapikey='+ WSAPI_KEY
-    //
-    //         return fetch(wsURL)
-    //           .then((response) => response.json())
-    //           .then((responseJson) => {
-    //             console.log('in fetch ... .then');
-    //             console.log(responseJson.walkscore);
-    //             // this.setCardInfo()
-    //           })
-    //           .catch((error) => {
-    //             console.log('in fetch .. .catch');
-    //             console.log(error);
-    //           });
-    //
+
     //
     //     } else {
     //       searchResults = (
