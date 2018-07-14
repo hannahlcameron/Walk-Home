@@ -16,7 +16,7 @@ class Card extends React.Component {
   constructor(){
     super();
     this.state= {
-      score: null
+      score: 'walk score loading'
     }
   }
 
@@ -27,9 +27,11 @@ class Card extends React.Component {
 
   componentDidMount() {
 
-    let wsURL = 'http://api.walkscore.com/score?format=json&address=3440%20Walnut%20Ave%20SW%20Seattle%20WA&lat=47.5718752&lon=-122.3835876&wsapikey={WSAPI_KEY}'
+    let wsURL = 'http://api.walkscore.com/score?format=json&address=3440%20Walnut%20Ave%20SW%20Seattle%20WA&lat=47.5718752&lon=-122.3835876&wsapikey=' + WSAPI_KEY
 
-    return fetch(wsURL)
+    console.log('starting API CALL');
+    console.log(wsURL);
+    fetch(wsURL)
       .then((response) => response.json())
       .then((responseJson) => {
         console.log('in fetch ... .then');
@@ -41,9 +43,9 @@ class Card extends React.Component {
       .catch((error) => {
         console.log('in fetch .. .catch');
         console.log(error);
-        this.setState = {
+        this.setState({
           score: 'WS Unavailable'
-        }
+        });
       });
   }
 
@@ -51,7 +53,7 @@ class Card extends React.Component {
     return (
         <TouchableOpacity onPress={this.getHouseData}>
           <View style={styles.listItem}>
-            <Text>{this.state.walkscore}</Text>
+            <Text>{this.state.score}</Text>
             <Text>{this.props.streetNum} {this.props.streetName} {this.props.streetType}</Text>
             <Text>{this.props.city} {this.props.state}</Text>
           </View>
