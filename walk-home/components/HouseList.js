@@ -3,6 +3,7 @@ import { StyleSheet, ScrollView, View, Text} from "react-native";
 import Card from "./Card";
 import PropTypes from 'prop-types';
 import { WSAPI_KEY } from 'react-native-dotenv';
+// import axios from "react-native-axios";
 // import JSONData from './library/addresses.JSON';
 
 const house =
@@ -34,20 +35,31 @@ class HouseList extends React.Component {
 
   componentDidMount() {
     console.log('starting API CALL');
-    return fetch(wsURL)
-    .then((response) => {
-      response.json()
-      console.log('in 1st fetch .then');
-    })
-    .then((responseJson) => {
-      console.log('in 2nd fetch .then');
-      console.log(responseJson.walkscore);
 
-    })
-    .catch((error) => {
-      console.log('in fetch .catch');
-      console.log(error);
-    });
+    // axios.get(wsURL)
+    //   .then(function (response) {
+    //     console.log('in .then');
+    //     console.log(response);
+    //   })
+    //   .catch(function (error) {
+    //     console.log('in .catch');
+    //     console.log(error);
+    //   });
+
+    // fetch(wsURL)
+    // .then((response) => {
+    //   response.json()
+    //   console.log('in 1st fetch .then');
+    // })
+    // .then((responseJson) => {
+    //   console.log('in 2nd fetch .then');
+    //   console.log(responseJson.walkscore);
+    //
+    // })
+    // .catch((error) => {
+    //   console.log('in fetch .catch');
+    //   console.log(error);
+    // });
   }
 
   render() {
