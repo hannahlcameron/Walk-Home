@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, ScrollView, View, Text} from "react-native";
 import Card from "./Card";
 import PropTypes from 'prop-types';
+import AddressDetail from './AddressDetail';
 
 // import axios from "react-native-axios";
 // import JSONData from './library/addresses.JSON';
@@ -29,38 +30,16 @@ class HouseList extends React.Component {
   constructor(){
     super();
     this.state= {
-      cardList: []
+      selectedHouse: {}
     }
   }
 
-  // componentDidMount() {
-  //   console.log('starting API CALL');
+  setSelectedHouse(house) {
+    this.setState({
+      selectedHouse: house
+    })
+  }
 
-    // axios.get(wsURL)
-    //   .then(function (response) {
-    //     console.log('in .then');
-    //     console.log(response);
-    //   })
-    //   .catch(function (error) {
-    //     console.log('in .catch');
-    //     console.log(error);
-    //   });
-
-    // fetch(wsURL)
-    // .then((response) => {
-    //   response.json()
-    //   console.log('in 1st fetch .then');
-    // })
-    // .then((responseJson) => {
-    //   console.log('in 2nd fetch .then');
-    //   console.log(responseJson.walkscore);
-    //
-    // })
-    // .catch((error) => {
-    //   console.log('in fetch .catch');
-    //   console.log(error);
-    // });
-  // }
 
   render() {
     let searchResults;
@@ -73,13 +52,14 @@ class HouseList extends React.Component {
 
     } else if (this.props.cityName.toLowerCase() === 'seattle') {
       searchResults =(
-        <ScrollView>
+        <ScrollView style={styles.listContainer}>
           <Card
             streetNum={house[0]["streetNum"]}
             streetName={house[0]["streetName"]}
             streetType={house[0]["streetType"]}
             city={house[0]["city"]}
             state={house[0]["state"]}
+            selectedHouseCallback={this.setSelectedHouse}
           />
         </ScrollView>
       )
@@ -91,10 +71,23 @@ class HouseList extends React.Component {
       )
     }
 
-    return (searchResults)
+    return (
+      <View>
+        <AddressDetail selectedHouse={this.state.selectedHouse}/>
+        {searchResults}
+      </View>
+
+    )
 
   }
 }
+
+const styles = StyleSheet.create({
+  listContainer: {
+    width: "100%",
+    height: "50%"
+  }
+})
 
 export default HouseList;
 
@@ -149,10 +142,3 @@ export default HouseList;
     //     return (searchResults)
     //   }
     // }
-
-    // const styles = StyleSheet.create({
-    //   listContainer: {
-    //     width: "100%",
-    //     height: "50%"
-    //   }
-    // })
