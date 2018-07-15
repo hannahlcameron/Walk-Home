@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 
 class AddressDetail extends React.Component {
   static propTypes = {
-    address: PropTypes.string.isRequired,
-    cityState: PropTypes.string.isRequired
+    selectedHouseAddress: PropTypes.string,
+    selectedHouseCityState: PropTypes.string
   }
 
   render() {
     return(
-      <Modal>
+      <Modal visible={this.props.selectedHouseAddress !== null}>
         <View style={styles.modalContainer}>
           <Text>Info about house here!</Text>
           <View>

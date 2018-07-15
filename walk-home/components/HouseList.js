@@ -28,14 +28,14 @@ class HouseList extends React.Component {
   constructor(){
     super();
     this.state= {
-      selectedAddess: null,
+      selectedAddress: null,
       selectedCityState: null
     }
   }
 
   setSelectedHouse(address, cityState) {
     this.setState({
-      selectedAddess: address,
+      selectedAddress: address,
       selectedCityState: cityState
     })
   }
@@ -73,7 +73,7 @@ class HouseList extends React.Component {
 
     return (
       <View>
-        <AddressDetail selectedHouseAddress={this.state.selectedAddess} selectedHouseCityState={this.state.selectedCityState}/>
+        <AddressDetail selectedHouseAddress={this.state.selectedAddress} selectedHouseCityState={this.state.selectedCityState}/>
         {searchResults}
       </View>
 
