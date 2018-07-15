@@ -20,8 +20,6 @@ const house =
   "longitude": -122.3835876
 }];
 
-// const wsURL = 'http://api.walkscore.com/score?format=json&address=3440%20Walnut%20Ave%20SW%20Seattle%20WA&lat=47.5718752&lon=-122.3835876&wsapikey=' + WSAPI_KEY
-
 class HouseList extends React.Component {
   static propTypes = {
     cityName: PropTypes.string.isRequired
@@ -30,13 +28,15 @@ class HouseList extends React.Component {
   constructor(){
     super();
     this.state= {
-      selectedHouse: {}
+      selectedAddess: null,
+      selectedCityState: null
     }
   }
 
-  setSelectedHouse(house) {
+  setSelectedHouse(address, cityState) {
     this.setState({
-      selectedHouse: house
+      selectedAddess: address,
+      selectedCityState: cityState
     })
   }
 
@@ -73,7 +73,7 @@ class HouseList extends React.Component {
 
     return (
       <View>
-        <AddressDetail selectedHouse={this.state.selectedHouse}/>
+        <AddressDetail selectedHouseAddress={this.state.selectedAddess} selectedHouseCityState={this.state.selectedCityState}/>
         {searchResults}
       </View>
 

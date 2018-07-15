@@ -26,11 +26,9 @@ class Card extends React.Component {
 
   getHouseData = () => {
     console.log('in getHouseData');
-    let house = {
-      address: `${this.props.streetNum} ${this.props.streetName} ${this.props.streetType}`,
-      citystatezip: `${this.props.city} ${this.props.state}` 
-    }
-    this.props.selectedHouseCallback(house)
+    let address = `${this.props.streetNum} ${this.props.streetName} ${this.props.streetType}`
+    let cityState= `${this.props.city} ${this.props.state}`
+    this.props.selectedHouseCallback(address, cityState)
   }
 
 

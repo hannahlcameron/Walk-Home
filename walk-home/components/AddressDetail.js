@@ -4,17 +4,20 @@ import PropTypes from 'prop-types';
 
 class AddressDetail extends React.Component {
   static propTypes = {
-    selectedHouse: PropTypes.object.isRequired
+    address: PropTypes.string.isRequired,
+    cityState: PropTypes.string.isRequired
   }
 
   render() {
     return(
       <Modal>
-        <View>
-          <Text>this.props.selectedHouse.address</Text>
+        <View style={styles.modalContainer}>
+          <Text>Info about house here!</Text>
           <View>
-            <Button />
-            <Button />
+            <Button
+              style={styles.button}
+              title='Close'
+              />
           </View>
         </View>
       </Modal>
@@ -23,6 +26,13 @@ class AddressDetail extends React.Component {
 
 }
 
-
+const styles = StyleSheet.create({
+  button: {
+    color: 'pink'
+  },
+  modalContainer: {
+    margin: 22
+  }
+});
 
 export default AddressDetail;
