@@ -25,28 +25,33 @@ class Card extends React.Component {
     console.log(event);
   }
 
-  componentDidMount() {
 
+  getWalkScore() {
     let wsURL = 'http://api.walkscore.com/score?format=json&address=3440%20Walnut%20Ave%20SW%20Seattle%20WA&lat=47.5718752&lon=-122.3835876&wsapikey=' + WSAPI_KEY
 
     console.log('starting API CALL');
     console.log(wsURL);
-    fetch(wsURL)
-      .then((response) => response.json())
-      .then((responseJson) => {
-        console.log('in fetch ... .then');
-        console.log(responseJson.walkscore);
-        this.setState = {
-          score: responseJson.walkscore
-        }
-      })
-      .catch((error) => {
-        console.log('in fetch .. .catch');
-        console.log(error);
-        this.setState({
-          score: 'WS Unavailable'
-        });
+    return fetch(wsURL)
+    .then((response) => response.json())
+    .then((responseJson) => {
+      console.log('in fetch ... .then');
+      console.log(responseJson.walkscore);
+      this.setState = {
+        score: responseJson.walkscore
+      }
+    })
+    .catch((error) => {
+      console.log('in fetch .. .catch');
+      console.log(error);
+      this.setState({
+        score: 'WS Unavailable'
       });
+    });
+  }
+
+  componentDidMount() {
+
+    this.getWalkScore();
   }
 
   render() {
