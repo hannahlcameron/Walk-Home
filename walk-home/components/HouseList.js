@@ -53,6 +53,7 @@ class HouseList extends React.Component {
       selectedTransitSummary: sTSum
     });
   }
+
   requestModalClosed = () => {
     this.setState({
       selectedAddress: null,
@@ -109,9 +110,7 @@ class HouseList extends React.Component {
           onModalClosed={this.requestModalClosed}
           />)
 
-    } else {
-      addressDetail = ( <View></View> )
-    }
+    } 
 
     return (
       <View>
