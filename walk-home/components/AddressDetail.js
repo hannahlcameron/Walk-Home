@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 class AddressDetail extends React.Component {
   static propTypes = {
     selectedHouseAddress: PropTypes.string,
-    selectedHouseCityState: PropTypes.string
+    selectedHouseCityState: PropTypes.string,
+    requestModalClosed: PropTypes.func.isRequired
   }
 
   render() {

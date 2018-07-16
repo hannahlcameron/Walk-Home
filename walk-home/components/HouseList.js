@@ -39,6 +39,12 @@ class HouseList extends React.Component {
       selectedCityState: cityState
     })
   }
+  requestModalClosed() {
+    this.setState({
+      selectedAddress: null,
+      selectedCityState: null
+    })
+  }
 
 
   render() {
@@ -73,7 +79,10 @@ class HouseList extends React.Component {
 
     return (
       <View>
-        <AddressDetail selectedHouseAddress={this.state.selectedAddress} selectedHouseCityState={this.state.selectedCityState}/>
+        <AddressDetail
+          selectedHouseAddress={this.state.selectedAddress} selectedHouseCityState={this.state.selectedCityState}
+          onModalClosed={this.requestModalClosed}
+          />
         {searchResults}
       </View>
 
