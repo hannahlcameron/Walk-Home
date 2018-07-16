@@ -10,13 +10,14 @@ class AddressDetail extends React.Component {
 
   render() {
     return(
-      <Modal visible={this.props.selectedHouseAddress !== null}>
+      <Modal visible={this.props.selectedHouseAddress !== null} onRequestClose={()=>{}}>
         <View style={styles.modalContainer}>
           <Text>Info about house here!</Text>
           <View>
             <Button
               style={styles.button}
               title='Close'
+              onPress={()=>{}}
               />
           </View>
         </View>
