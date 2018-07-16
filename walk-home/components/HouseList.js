@@ -57,7 +57,14 @@ class HouseList extends React.Component {
   requestModalClosed = () => {
     this.setState({
       selectedAddress: null,
-      selectedCityState: null
+      selectedCityState: null,
+      selectedWalkScore: null,
+      selectedWalkDescription: null,
+      selectedBikeScore: null,
+      selectedBikeDescription: null,
+      selectedTransitScore: null,
+      selectedTransitDescription: null,
+      selectedTransitSummary: null
     });
   }
 
@@ -110,7 +117,7 @@ class HouseList extends React.Component {
           onModalClosed={this.requestModalClosed}
           />)
 
-    } 
+    }
 
     return (
       <View>

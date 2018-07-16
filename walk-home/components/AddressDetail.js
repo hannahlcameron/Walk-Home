@@ -28,15 +28,26 @@ class AddressDetail extends React.Component {
   // }
 
   render() {
+
+    let modalContent = null;
+
+    if (this.props.address) {
+      modalContent = (
+        <View>
+          <Text>House Address: {this.props.address} {this.props.cityState}</Text>
+          <Text style={styles.link}
+            onPress={() => Linking.openURL(HELPLINK)}
+            >Walk Score®: {this.props.walkScore}
+          </Text>
+          <Text>{this.props.walkDescription}</Text>
+        </View>
+      )
+    }
+
     return(
       <Modal visible={this.props.address !== null} onRequestClose={this.props.onModalClosed}>
         <View style={styles.modalContainer}>
-          <Text>House Address: this.props.address this.props.cityState</Text>
-          <Text style={styles.link}
-            onPress={() => Linking.openURL(HELPLINK)}
-            >Walk Score®: {this.state.walkScore}
-          </Text>
-          <Text>this.props.walkDescription</Text>
+          {modalContent}
           <View>
             <Button
               style={styles.button}
