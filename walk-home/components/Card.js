@@ -102,7 +102,6 @@ class Card extends React.Component {
   }
 
   render() {
-    console.log(this.state.backgroundColor);
     return (
         <TouchableOpacity onPress={this.getHouseData}>
           <View style={[styles.listItem, {backgroundColor: this.state.backgroundColor}]}>
