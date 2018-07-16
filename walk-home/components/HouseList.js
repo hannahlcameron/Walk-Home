@@ -5,20 +5,20 @@ import PropTypes from 'prop-types';
 import AddressDetail from './AddressDetail';
 
 // import axios from "react-native-axios";
-// import JSONData from './library/addresses.JSON';
+import house from '../library/addresses.json';
 
-const house =
-// JSON.parse(JSONData);
-[{
-  "key": 1,
-  "streetNum": "3440",
-  "streetName": "Walnut",
-  "streetType": "Ave SW",
-  "city": "Seattle",
-  "state": "WA",
-  "latitude": 47.5718752,
-  "longitude": -122.3835876
-}];
+// const house =
+// // JSON.parse(JSONData);
+// [{
+//   "key": 1,
+//   "streetNum": "3440",
+//   "streetName": "Walnut",
+//   "streetType": "Ave SW",
+//   "city": "Seattle",
+//   "state": "WA",
+//   "latitude": 47.5718752,
+//   "longitude": -122.3835876
+// }];
 
 class HouseList extends React.Component {
   static propTypes = {
@@ -29,14 +29,28 @@ class HouseList extends React.Component {
     super();
     this.state= {
       selectedAddress: null,
-      selectedCityState: null
+      selectedCityState: null,
+      selectedWalkScore: null,
+      selectedWalkDescription: null,
+      selectedBikeScore: null,
+      selectedBikeDescription: null,
+      selectedTransitScore: null,
+      selectedTransitDescription: null,
+      selectedTransitSummary: null
     };
   }
 
-  setSelectedHouse = (address, cityState) => {
+  setSelectedHouse = (address, cityState, sWS, sWD, sBS, sBD, sTScore, sTD, sTSum ) => {
     this.setState({
       selectedAddress: address,
-      selectedCityState: cityState
+      selectedCityState: cityState,
+      selectedWalkScore: sWS,
+      selectedWalkDescription: sWD,
+      selectedBikeScore: sBS,
+      selectedBikeDescription: sBD,
+      selectedTransitScore: sTScore,
+      selectedTransitDescription: sTD,
+      selectedTransitSummary: sTSum
     });
   }
   requestModalClosed = () => {
@@ -77,12 +91,31 @@ class HouseList extends React.Component {
       )
     }
 
+    let addressDetail;
+
+    if (this.state.selectedWalkScore !== null) {
+      console.log();
+      addressDetail = (
+        <AddressDetail
+          address={this.state.selectedAddress}
+          cityState={this.state.selectedCityState}
+          walkScore={this.state.selectedWalkScore}
+          walkDescription={this.state.selectedWalkDescription}
+          bikeScore={this.state.selectedBikeScore}
+          bikeDescription={this.state.selectedBikeDescription}
+          transitScore={this.state.selectedTransitScore}
+          transitDescription={this.state.selectedTransitDescription}
+          transitSummary={this.state.selectedTransitSummary}
+          onModalClosed={this.requestModalClosed}
+          />)
+
+    } else {
+      addressDetail = ( <View></View> )
+    }
+
     return (
       <View>
-        <AddressDetail
-          selectedHouseAddress={this.state.selectedAddress} selectedHouseCityState={this.state.selectedCityState}
-          onModalClosed={this.requestModalClosed}
-          />
+        {addressDetail}
         {searchResults}
       </View>
 

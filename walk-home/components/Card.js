@@ -19,7 +19,13 @@ class Card extends React.Component {
   constructor(){
     super();
     this.state= {
-      score: 'walk score loading',
+      walkScore: 'walk score loading',
+      walkDescription: null,
+      bikeScore: null,
+      bikeDescription: null,
+      transitScore: null,
+      transitDescription: null,
+      transitSummary: null,
       backgroundColor: '#eee'
     }
   }
@@ -29,12 +35,12 @@ class Card extends React.Component {
     let address = `${this.props.streetNum} ${this.props.streetName} ${this.props.streetType}`
     let cityState= `${this.props.city} ${this.props.state}`
     console.log(`address is ${address} and cityState is ${cityState}`);
-    this.props.selectedHouseCallback(address, cityState)
+    this.props.selectedHouseCallback(address, cityState, this.state.walkScore, this.state.walkDescription, this.state.bikeScore, this.state.bikeDescription, this.state.transitScore, this.state.transitDescription, this.state.transitSummary)
   }
 
 
   getWalkScore() {
-    let wsURL = 'http://api.walkscore.com/score?format=json&address=3440%20Walnut%20Ave%20SW%20Seattle%20WA&lat=47.5718752&lon=-122.3835876&wsapikey=' + WSAPI_KEY
+    let wsURL = 'http://api.walkscore.com/score?format=json&address=3440%20Walnut%20Ave%20SW%20Seattle%20WA&lat=47.5718752&lon=-122.3835876&transit=1&bike=1&wsapikey=' + WSAPI_KEY
 
     console.log('starting API CALL');
     console.log(wsURL);
@@ -42,9 +48,17 @@ class Card extends React.Component {
     .then((response) => response.json())
     .then((responseJson) => {
       console.log('in fetch ... .then');
-      console.log(responseJson.walkscore);
+      console.log(responseJson);
+      console.log(responseJson.transit);
+      console.log(responseJson.bike);
       this.setState({
-        score: responseJson.walkscore
+        walkScore: responseJson.walkscore,
+        walkDescription: responseJson.description,
+        bikeScore: responseJson.bike.score,
+        bikeDescription: responseJson.bike.description,
+        transitScore: responseJson.transit.score,
+        transitDescription: responseJson.transit.description,
+        transitSummary: responseJson.transit.summary
       })
       this.setBackgroundColor()
     })
@@ -52,33 +66,33 @@ class Card extends React.Component {
       console.log('in fetch .. .catch');
       console.log(error);
       this.setState({
-        score: 'WS Unavailable'
+        walkScore: 'WS Unavailable'
       });
     });
   }
 
   setBackgroundColor() {
     console.log('beginning of setBackgroundColor');
-    console.log(this.state.score);
+    console.log(this.state.walkScore);
     let color = '#eee'
-    if (this.state.score < 51) {
+    if (this.state.walkScore < 51) {
       color = '#E0590B'
-    } else if ((this.state.score > 50) && (this.state.score < 61)) {
+    } else if ((this.state.walkScore > 50) && (this.state.walkScore < 61)) {
       color = '#E0A331'
-    } else if ((this.state.score > 60) && (this.state.score < 71)) {
+    } else if ((this.state.walkScore > 60) && (this.state.walkScore < 71)) {
       color = '#CEC737'
-    } else if ((this.state.score > 70) && (this.state.score < 81)) {
+    } else if ((this.state.walkScore > 70) && (this.state.walkScore < 81)) {
       color = '#9ACE5F'
-    } else if ((this.state.score > 80) && (this.state.score < 91)) {
+    } else if ((this.state.walkScore > 80) && (this.state.walkScore < 91)) {
       color = '#7ECA50'
-    } else if (this.state.score > 90) {
+    } else if (this.state.walkScore > 90) {
       color = '#0CCA4A'
     }
     this.setState({
       backgroundColor: color
     });
     console.log('end of setBackgroundColor');
-    console.log(this.state.score);
+    console.log(this.state.walkScore);
   }
 
   componentDidMount() {
@@ -93,7 +107,7 @@ class Card extends React.Component {
           <View style={[styles.listItem, {backgroundColor: this.state.backgroundColor}]}>
             <Text style={styles.link}
               onPress={() => Linking.openURL(HELPLINK)}
-              >Walk Score®: {this.state.score}
+              >Walk Score®: {this.state.walkScore}
             </Text>
           <Text tyle={styles.addressText}>{this.props.streetNum} {this.props.streetName} {this.props.streetType} {this.props.city} {this.props.state}</Text>
           </View>

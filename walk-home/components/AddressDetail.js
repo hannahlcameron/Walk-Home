@@ -1,11 +1,20 @@
 import React from "react";
-import { Modal, View, Text, Button,  StyleSheet} from "react-native";
+import { Modal, View, Text, Button, Linking, StyleSheet} from "react-native";
 import PropTypes from 'prop-types';
+
+const HELPLINK = "https://www.redfin.com/how-walk-score-works"
 
 class AddressDetail extends React.Component {
   static propTypes = {
-    selectedHouseAddress: PropTypes.string,
-    selectedHouseCityState: PropTypes.string,
+    address: PropTypes.string,
+    cityState: PropTypes.string,
+    walkScore: PropTypes.num,
+    walkDescription: PropTypes.string,
+    bikeScore: PropTypes.num,
+    bikeDescription: PropTypes.string,
+    transitScore: PropTypes.num,
+    transitDescription: PropTypes.string,
+    transitSummary: PropTypes.string,
     onModalClosed: PropTypes.func.isRequired
   }
 
@@ -13,16 +22,21 @@ class AddressDetail extends React.Component {
     console.log(`getting Zillow info`);
   }
 
-  componentDidMount() {
-
-    this.getZillowInfo();
-  }
+  // componentDidMount() {
+  //
+  //   this.getZillowInfo();
+  // }
 
   render() {
     return(
-      <Modal visible={this.props.selectedHouseAddress !== null} onRequestClose={this.props.onModalClosed}>
+      <Modal visible={this.props.address !== null} onRequestClose={this.props.onModalClosed}>
         <View style={styles.modalContainer}>
-          <Text>Info about house here!</Text>
+          <Text>House Address: this.props.address this.props.cityState</Text>
+          <Text style={styles.link}
+            onPress={() => Linking.openURL(HELPLINK)}
+            >Walk Score®: {this.state.walkScore}
+          </Text>
+          <Text>this.props.walkDescription</Text>
           <View>
             <Button
               style={styles.button}
