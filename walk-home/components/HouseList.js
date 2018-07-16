@@ -30,20 +30,20 @@ class HouseList extends React.Component {
     this.state= {
       selectedAddress: null,
       selectedCityState: null
-    }
+    };
   }
 
-  setSelectedHouse(address, cityState) {
+  setSelectedHouse = (address, cityState) => {
     this.setState({
       selectedAddress: address,
       selectedCityState: cityState
-    })
+    });
   }
-  requestModalClosed() {
+  requestModalClosed = () => {
     this.setState({
       selectedAddress: null,
       selectedCityState: null
-    })
+    });
   }
 
 
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "50%"
   }
-})
+});
 
 export default HouseList;
 
