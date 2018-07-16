@@ -35,6 +35,7 @@ class Card extends React.Component {
     let address = `${this.props.streetNum} ${this.props.streetName} ${this.props.streetType}`
     let cityState= `${this.props.city} ${this.props.state}`
     console.log(`address is ${address} and cityState is ${cityState}`);
+    console.log(`WS is ${this.state.walkScore}`);
     this.props.selectedHouseCallback(address, cityState, this.state.walkScore, this.state.walkDescription, this.state.bikeScore, this.state.bikeDescription, this.state.transitScore, this.state.transitDescription, this.state.transitSummary)
   }
 

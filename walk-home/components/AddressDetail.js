@@ -8,11 +8,11 @@ class AddressDetail extends React.Component {
   static propTypes = {
     address: PropTypes.string,
     cityState: PropTypes.string,
-    walkScore: PropTypes.num,
+    walkScore: PropTypes.number,
     walkDescription: PropTypes.string,
-    bikeScore: PropTypes.num,
+    bikeScore: PropTypes.number,
     bikeDescription: PropTypes.string,
-    transitScore: PropTypes.num,
+    transitScore: PropTypes.number,
     transitDescription: PropTypes.string,
     transitSummary: PropTypes.string,
     onModalClosed: PropTypes.func.isRequired
