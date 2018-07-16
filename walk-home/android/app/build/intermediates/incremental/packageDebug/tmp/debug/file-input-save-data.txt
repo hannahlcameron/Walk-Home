@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Jul 06 19:28:43 PDT 2018
+#Sun Jul 15 15:42:02 PDT 2018
 17.baseType=DIRECTORY
 4.path=lib/x86/libyoga.so
 25.base=/Users/hannahlisa/ada/walk-home/Walk-Home/walk-home/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
