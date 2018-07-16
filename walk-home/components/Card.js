@@ -45,6 +45,7 @@ class Card extends React.Component {
       this.setState({
         score: responseJson.walkscore
       })
+      this.setBackgroundColor()
     })
     .catch((error) => {
       console.log('in fetch .. .catch');
@@ -56,6 +57,8 @@ class Card extends React.Component {
   }
 
   setBackgroundColor() {
+    console.log('beginning of setBackgroundColor');
+    console.log(this.state.score);
     let color = '#eee'
     if (this.state.score < 51) {
       color = '#E0590B'
@@ -67,18 +70,19 @@ class Card extends React.Component {
       color = '#9ACE5F'
     } else if ((this.state.score > 80) && (this.state.score < 91)) {
       color = '#7ECA50'
-    } else if ((this.state.score > 90) && (this.state.score < 101)){
+    } else if (this.state.score > 90) {
       color = '#0CCA4A'
     }
     this.setState({
       backgroundColor: color
     });
+    console.log('end of setBackgroundColor');
+    console.log(this.state.score);
   }
 
   componentDidMount() {
 
     this.getWalkScore();
-    this.setBackgroundColor();
   }
 
   render() {
