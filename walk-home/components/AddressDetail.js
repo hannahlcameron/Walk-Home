@@ -1,13 +1,13 @@
 import React from "react";
-import { Modal, View, Text, Button, Image, TouchableOpacity, Linking, StyleSheet} from "react-native";
+import { Modal, View, Text, Button, Linking, StyleSheet} from "react-native";
 import PropTypes from 'prop-types';
 
 const HELPLINK = "https://www.redfin.com/how-walk-score-works"
 
-const walkBadgeURL = 'https://www.walkscore.com/badge/walk/3440-Walnut-Avenue-SW-Seattle-WA-98116.svg'
-
-const bikeBadgeURL = 'https://www.walkscore.com/badge/bike/3440-Walnut-Avenue-SW-Seattle-WA-98116.svg'
-const transitBadgeURL = 'https://www.walkscore.com/badge/transit/3440-Walnut-Avenue-SW-Seattle-WA-98116.svg'
+// const walkBadgeURL = 'https://www.walkscore.com/badge/bike/3440-Walnut-Avenue-SW-Seattle-WA-98116.svg'
+//
+// const bikeBadgeURL = 'https://www.walkscore.com/badge/bike/3440-Walnut-Avenue-SW-Seattle-WA-98116.svg'
+// const transitBadgeURL = 'https://www.walkscore.com/badge/transit/3440-Walnut-Avenue-SW-Seattle-WA-98116.svg'
 
 class AddressDetail extends React.Component {
   static propTypes = {
@@ -35,38 +35,28 @@ class AddressDetail extends React.Component {
 
   render() {
 
-
-
     let modalContent = null;
 
     if (this.props.address) {
       modalContent = (
         <View>
           <Text>House Address: {this.props.address} {this.props.cityState}</Text>
-          <View>
-            <TouchableOpacity onPress={() => Linking.openURL(HELPLINK)}>
-              <Image
-                style={{width: 66, height: 58}}
-                source={{uri: walkBadgeURL}}
-              />
-            </TouchableOpacity>
-            <Image
-              style={{width: 66, height: 58}}
-              source={{uri: bikeBadgeURL}}
-              onPress={() => Linking.openURL(HELPLINK)}
-            />
-            <Image
-              style={{width: 66, height: 58}}
-              source={{uri: transitBadgeURL}}
-              onPress={() => Linking.openURL(HELPLINK)}
-            />
-          </View>
-          <View>
-            <Text>{this.props.walkDescription}</Text>
-            <Text>{this.props.bikeDescription}</Text>
-            <Text>{this.props.transitDescription}</Text>
-            <Text>{this.props.transitSummary}</Text>
-          </View>
+          <Text style={styles.link}
+            onPress={() => Linking.openURL(HELPLINK)}
+            >Walk Score®: {this.props.walkScore}
+          </Text>
+          <Text style={styles.link}
+            onPress={() => Linking.openURL(HELPLINK)}
+            >Bike Score®: {this.props.bikeScore}
+          </Text>
+          <Text style={styles.link}
+            onPress={() => Linking.openURL(HELPLINK)}
+            >Transit Score®: {this.props.transitScore}
+          </Text>
+          <Text>{this.props.walkDescription}</Text>
+          <Text>{this.props.bikeDescription}</Text>
+          <Text>{this.props.transitDescription}</Text>
+          <Text>{this.props.transitSummary}</Text>
         </View>
       )
     }
