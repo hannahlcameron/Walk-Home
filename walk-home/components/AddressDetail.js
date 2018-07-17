@@ -3,6 +3,7 @@ import { Modal, View, Text, Button, Linking, StyleSheet} from "react-native";
 import PropTypes from 'prop-types';
 import { ZAPI_KEY } from 'react-native-dotenv';
 
+const parseString = require('react-native-xml2js').parseString;
 const HELPLINK = "https://www.redfin.com/how-walk-score-works"
 
 // const walkBadgeURL = 'https://www.walkscore.com/badge/bike/3440-Walnut-Avenue-SW-Seattle-WA-98116.svg'
@@ -35,33 +36,22 @@ class AddressDetail extends React.Component {
 
           console.log('starting Z-API CALL');
           console.log(zURL);
+
           return fetch(zURL)
+          .then(response => response.text())
           .then((response) => {
-            console.log('in fetch ... .then');
-            console.log(response);
-          // .then((responseJson) => {
-          //   console.log('in fetch ... .then');
-          //   console.log(responseJson);
-          //   console.log(responseJson.transit);
-          //   console.log(responseJson.bike);
-          //   this.setState({
-          //     walkScore: responseJson.walkscore,
-          //     walkDescription: responseJson.description,
-          //     bikeScore: responseJson.bike.score,
-          //     bikeDescription: responseJson.bike.description,
-          //     transitScore: responseJson.transit.score,
-          //     transitDescription: responseJson.transit.description,
-          //     transitSummary: responseJson.transit.summary
-          //   })
-          //   this.setBackgroundColor()
+              parseString(response, function (err, result) {
+                  console.log('response');
+                  console.log(response);
+                  console.log('result');
+                  console.log(result);
+                  console.log('err');
+                  console.log(err);
+              });
           })
-          .catch((error) => {
-            console.log('in fetch .. .catch');
-            console.log(error);
-            // this.setState({
-            //   walkScore: 'WS Unavailable'
-            // });
-          });
+          .catch((err) => {
+              console.log('fetch', err)
+          })
     }
   }
 
