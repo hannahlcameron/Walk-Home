@@ -11,8 +11,11 @@ const HELPLINK = "https://www.redfin.com/how-walk-score-works"
 
 class AddressDetail extends React.Component {
   static propTypes = {
-    address: PropTypes.string,
-    cityState: PropTypes.string,
+    streetNum: PropTypes.string,
+    streetName: PropTypes.string,
+    streetType: PropTypes.string,
+    city: PropTypes.string,
+    state: PropTypes.string,
     walkScore: PropTypes.number,
     walkDescription: PropTypes.string,
     bikeScore: PropTypes.number,
@@ -20,27 +23,28 @@ class AddressDetail extends React.Component {
     transitScore: PropTypes.number,
     transitDescription: PropTypes.string,
     transitSummary: PropTypes.string,
+    selected: PropTypes.bool.isRequired,
     onModalClosed: PropTypes.func.isRequired
   }
 
   getZillowInfo() {
-    console.log(`getting Zillow info`);
-  }
-
-  shouldComponentUpdate() {
-    if (this.props.address) {
-          this.getZillowInfo();
+    if (this.props.selected) {
+          console.log(`getting Zillow info for ${this.props.streetNum}`);
     }
   }
 
   render() {
 
-    let modalContent = null;
+    this.getZillowInfo();
 
-    if (this.props.address) {
+    let modalContent;
+
+    if (this.props.selected) {
       modalContent = (
         <View>
-          <Text>House Address: {this.props.address} {this.props.cityState}</Text>
+          <Text style={styles.addressText}>
+            {this.props.streetNum} {this.props.streetName} {this.props.streetType} {this.props.city} {this.props.state}
+          </Text>
           <Text style={styles.link}
             onPress={() => Linking.openURL(HELPLINK)}
             >Walk Score®: {this.props.walkScore}
@@ -62,7 +66,7 @@ class AddressDetail extends React.Component {
     }
 
     return(
-      <Modal visible={this.props.address !== null} onRequestClose={this.props.onModalClosed}>
+      <Modal visible={this.props.selected} onRequestClose={this.props.onModalClosed}>
         <View style={styles.modalContainer}>
           {modalContent}
           <View>

@@ -2,71 +2,55 @@ import React from "react";
 import { StyleSheet, ScrollView, View, Text} from "react-native";
 import Card from "./Card";
 import PropTypes from 'prop-types';
-import AddressDetail from './AddressDetail';
-
-// import axios from "react-native-axios";
 import house from '../library/addresses.json';
-
-// const house =
-// // JSON.parse(JSONData);
-// [{
-//   "key": 1,
-//   "streetNum": "3440",
-//   "streetName": "Walnut",
-//   "streetType": "Ave SW",
-//   "city": "Seattle",
-//   "state": "WA",
-//   "latitude": 47.5718752,
-//   "longitude": -122.3835876
-// }];
 
 class HouseList extends React.Component {
   static propTypes = {
     cityName: PropTypes.string.isRequired
   }
 
-  constructor(){
-    super();
-    this.state= {
-      selectedAddress: null,
-      selectedCityState: null,
-      selectedWalkScore: null,
-      selectedWalkDescription: null,
-      selectedBikeScore: null,
-      selectedBikeDescription: null,
-      selectedTransitScore: null,
-      selectedTransitDescription: null,
-      selectedTransitSummary: null
-    };
-  }
+  // constructor(){
+  //   super();
+  //   this.state= {
+  //     selectedAddress: null,
+  //     selectedCityState: null,
+  //     selectedWalkScore: null,
+  //     selectedWalkDescription: null,
+  //     selectedBikeScore: null,
+  //     selectedBikeDescription: null,
+  //     selectedTransitScore: null,
+  //     selectedTransitDescription: null,
+  //     selectedTransitSummary: null
+  //   };
+  // }
 
-  setSelectedHouse = (address, cityState, sWS, sWD, sBS, sBD, sTScore, sTD, sTSum ) => {
-    this.setState({
-      selectedAddress: address,
-      selectedCityState: cityState,
-      selectedWalkScore: sWS,
-      selectedWalkDescription: sWD,
-      selectedBikeScore: sBS,
-      selectedBikeDescription: sBD,
-      selectedTransitScore: sTScore,
-      selectedTransitDescription: sTD,
-      selectedTransitSummary: sTSum
-    });
-  }
+  // setSelectedHouse = (address, cityState, sWS, sWD, sBS, sBD, sTScore, sTD, sTSum ) => {
+  //   this.setState({
+  //     selectedAddress: address,
+  //     selectedCityState: cityState,
+  //     selectedWalkScore: sWS,
+  //     selectedWalkDescription: sWD,
+  //     selectedBikeScore: sBS,
+  //     selectedBikeDescription: sBD,
+  //     selectedTransitScore: sTScore,
+  //     selectedTransitDescription: sTD,
+  //     selectedTransitSummary: sTSum
+  //   });
+  // }
 
-  requestModalClosed = () => {
-    this.setState({
-      selectedAddress: null,
-      selectedCityState: null,
-      selectedWalkScore: null,
-      selectedWalkDescription: null,
-      selectedBikeScore: null,
-      selectedBikeDescription: null,
-      selectedTransitScore: null,
-      selectedTransitDescription: null,
-      selectedTransitSummary: null
-    });
-  }
+  // requestModalClosed = () => {
+  //   this.setState({
+  //     selectedAddress: null,
+  //     selectedCityState: null,
+  //     selectedWalkScore: null,
+  //     selectedWalkDescription: null,
+  //     selectedBikeScore: null,
+  //     selectedBikeDescription: null,
+  //     selectedTransitScore: null,
+  //     selectedTransitDescription: null,
+  //     selectedTransitSummary: null
+  //   });
+  // }
 
 
   render() {
@@ -87,7 +71,6 @@ class HouseList extends React.Component {
             streetType={house[0]["streetType"]}
             city={house[0]["city"]}
             state={house[0]["state"]}
-            selectedHouseCallback={this.setSelectedHouse}
           />
         </ScrollView>
       )
@@ -99,34 +82,11 @@ class HouseList extends React.Component {
       )
     }
 
-    let addressDetail;
-
-    if (this.state.selectedWalkScore !== null) {
-      console.log();
-      addressDetail = (
-        <AddressDetail
-          address={this.state.selectedAddress}
-          cityState={this.state.selectedCityState}
-          walkScore={this.state.selectedWalkScore}
-          walkDescription={this.state.selectedWalkDescription}
-          bikeScore={this.state.selectedBikeScore}
-          bikeDescription={this.state.selectedBikeDescription}
-          transitScore={this.state.selectedTransitScore}
-          transitDescription={this.state.selectedTransitDescription}
-          transitSummary={this.state.selectedTransitSummary}
-          onModalClosed={this.requestModalClosed}
-          />)
-
-    }
-
     return (
       <View>
-        {addressDetail}
         {searchResults}
       </View>
-
     )
-
   }
 }
 
