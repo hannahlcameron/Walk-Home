@@ -45,16 +45,16 @@ class AddressDetail extends React.Component {
             onPress={() => Linking.openURL(HELPLINK)}
             >Walk Score®: {this.props.walkScore}
           </Text>
+          <Text>{this.props.walkDescription}</Text>
           <Text style={styles.link}
             onPress={() => Linking.openURL(HELPLINK)}
             >Bike Score®: {this.props.bikeScore}
           </Text>
+          <Text>{this.props.bikeDescription}</Text>
           <Text style={styles.link}
             onPress={() => Linking.openURL(HELPLINK)}
             >Transit Score®: {this.props.transitScore}
           </Text>
-          <Text>{this.props.walkDescription}</Text>
-          <Text>{this.props.bikeDescription}</Text>
           <Text>{this.props.transitDescription}</Text>
           <Text>{this.props.transitSummary}</Text>
         </View>
