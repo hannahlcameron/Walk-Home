@@ -41,12 +41,10 @@ class AddressDetail extends React.Component {
           .then(response => response.text())
           .then((response) => {
               parseString(response, function (err, result) {
-                  console.log('response');
-                  console.log(response);
                   console.log('result');
                   console.log(result);
-                  console.log('err');
-                  console.log(err);
+                  console.log('result.SearchResults:', result['SearchResults:searchresults']['response'][0]['results'][0] );
+                  console.log('err', err);
               });
           })
           .catch((err) => {
