@@ -44,7 +44,7 @@ s
   getWalkScore() {
     let wsURL = 'http://api.walkscore.com/score?format=json&address=3440%20Walnut%20Ave%20SW%20Seattle%20WA&lat=47.5718752&lon=-122.3835876&transit=1&bike=1&wsapikey=' + WSAPI_KEY
 
-    console.log('starting API CALL');
+    console.log('starting WS-API CALL');
     console.log(wsURL);
     return fetch(wsURL)
     .then((response) => response.json())

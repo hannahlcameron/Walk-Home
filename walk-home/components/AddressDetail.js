@@ -1,6 +1,7 @@
 import React from "react";
 import { Modal, View, Text, Button, Linking, StyleSheet} from "react-native";
 import PropTypes from 'prop-types';
+import { ZAPI_KEY } from 'react-native-dotenv';
 
 const HELPLINK = "https://www.redfin.com/how-walk-score-works"
 
@@ -30,6 +31,37 @@ class AddressDetail extends React.Component {
   getZillowInfo() {
     if (this.props.selected) {
           console.log(`getting Zillow info for ${this.props.streetNum}`);
+          let zURL = 'http://www.zillow.com/webservice/GetSearchResults.htm?address=3440%20Walnut%20Ave%20SW%20&citystatezip=Seattle%20WA&zws-id=' + ZAPI_KEY
+
+          console.log('starting Z-API CALL');
+          console.log(zURL);
+          return fetch(zURL)
+          .then((response) => {
+            console.log('in fetch ... .then');
+            console.log(response);
+          // .then((responseJson) => {
+          //   console.log('in fetch ... .then');
+          //   console.log(responseJson);
+          //   console.log(responseJson.transit);
+          //   console.log(responseJson.bike);
+          //   this.setState({
+          //     walkScore: responseJson.walkscore,
+          //     walkDescription: responseJson.description,
+          //     bikeScore: responseJson.bike.score,
+          //     bikeDescription: responseJson.bike.description,
+          //     transitScore: responseJson.transit.score,
+          //     transitDescription: responseJson.transit.description,
+          //     transitSummary: responseJson.transit.summary
+          //   })
+          //   this.setBackgroundColor()
+          })
+          .catch((error) => {
+            console.log('in fetch .. .catch');
+            console.log(error);
+            // this.setState({
+            //   walkScore: 'WS Unavailable'
+            // });
+          });
     }
   }
 
