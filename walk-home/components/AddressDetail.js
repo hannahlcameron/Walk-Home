@@ -29,6 +29,19 @@ class AddressDetail extends React.Component {
     onModalClosed: PropTypes.func.isRequired
   }
 
+  constructor() {
+    super();
+    this.state = {
+      zestimate: null,
+      lastUpdate: null,
+      comparables: null,
+      homeDetails: null,
+      region: null,
+      regType: null,
+      currency: null
+    }
+  }
+
   getZillowInfo() {
     if (this.props.selected) {
           console.log(`getting Zillow info for ${this.props.streetNum}`);
@@ -43,8 +56,11 @@ class AddressDetail extends React.Component {
               parseString(response, function (err, result) {
                   console.log('result');
                   console.log(result);
-                  console.log(result['SearchResults:searchresults'].response['0'].results['0'].result['0'].zestimate['0'].amount['0']._);
+                  let zestimate = result['SearchResults:searchresults'].response['0'].results['0'].result['0'].zestimate['0'].amount['0']._;
                   console.log('err', err);
+                  this.setState({
+                    zestimate: zestimate
+                  })
               });
           })
           .catch((err) => {
@@ -56,6 +72,16 @@ class AddressDetail extends React.Component {
   render() {
 
     this.getZillowInfo();
+
+    let zillowData;
+
+    if (this.state.zestimate ) {
+      zillowData = (
+        <View>
+          
+        </View>
+      )
+    }
 
     let modalContent;
 
@@ -81,6 +107,9 @@ class AddressDetail extends React.Component {
           </Text>
           <Text>{this.props.transitDescription}</Text>
           <Text>{this.props.transitSummary}</Text>
+        </View>
+        <View>
+          {zillowData}
         </View>
       )
     }
