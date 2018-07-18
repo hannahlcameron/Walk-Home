@@ -69,11 +69,9 @@ class AddressDetail extends React.Component {
     }
   }
 
-  componentDidUpdate() {
+  componentDidMount() {
     // Typical usage (don't forget to compare props):
-    if (this.props.selected) {
       this.getZillowInfo();
-    }
   }
 
   render() {
