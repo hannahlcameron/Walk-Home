@@ -43,7 +43,7 @@ class AddressDetail extends React.Component {
               parseString(response, function (err, result) {
                   console.log('result');
                   console.log(result);
-                  console.log('result.SearchResults:', result['SearchResults:searchresults']['response'][0]['results'][0] );
+                  console.log(result['SearchResults:searchresults'].response['0'].results['0'].result['0'].zestimate['0'].amount['0']._);
                   console.log('err', err);
               });
           })
