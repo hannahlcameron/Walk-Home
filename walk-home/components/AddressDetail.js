@@ -69,16 +69,21 @@ class AddressDetail extends React.Component {
     }
   }
 
-  render() {
+  componentDidUpdate() {
+    // Typical usage (don't forget to compare props):
+    if (this.props.selected) {
+      this.getZillowInfo();
+    }
+  }
 
-    this.getZillowInfo();
+  render() {
 
     let zillowData;
 
     if (this.state.zestimate ) {
       zillowData = (
         <View>
-          
+          <Text>Zestimate®: {this.state.zestimate}</Text>
         </View>
       )
     }
@@ -88,29 +93,32 @@ class AddressDetail extends React.Component {
     if (this.props.selected) {
       modalContent = (
         <View>
-          <Text style={styles.addressText}>
-            {this.props.streetNum} {this.props.streetName} {this.props.streetType} {this.props.city} {this.props.state}
-          </Text>
-          <Text style={styles.link}
-            onPress={() => Linking.openURL(HELPLINK)}
-            >Walk Score®: {this.props.walkScore}
-          </Text>
-          <Text>{this.props.walkDescription}</Text>
-          <Text style={styles.link}
-            onPress={() => Linking.openURL(HELPLINK)}
-            >Bike Score®: {this.props.bikeScore}
-          </Text>
-          <Text>{this.props.bikeDescription}</Text>
-          <Text style={styles.link}
-            onPress={() => Linking.openURL(HELPLINK)}
-            >Transit Score®: {this.props.transitScore}
-          </Text>
-          <Text>{this.props.transitDescription}</Text>
-          <Text>{this.props.transitSummary}</Text>
+          <View>
+            <Text style={styles.addressText}>
+              {this.props.streetNum} {this.props.streetName} {this.props.streetType} {this.props.city} {this.props.state}
+            </Text>
+            <Text style={styles.link}
+              onPress={() => Linking.openURL(HELPLINK)}
+              >Walk Score®: {this.props.walkScore}
+            </Text>
+            <Text>{this.props.walkDescription}</Text>
+            <Text style={styles.link}
+              onPress={() => Linking.openURL(HELPLINK)}
+              >Bike Score®: {this.props.bikeScore}
+            </Text>
+            <Text>{this.props.bikeDescription}</Text>
+            <Text style={styles.link}
+              onPress={() => Linking.openURL(HELPLINK)}
+              >Transit Score®: {this.props.transitScore}
+            </Text>
+            <Text>{this.props.transitDescription}</Text>
+            <Text>{this.props.transitSummary}</Text>
+          </View>
+          <View>
+            {zillowData}
+          </View>
         </View>
-        <View>
-          {zillowData}
-        </View>
+
       )
     }
 
