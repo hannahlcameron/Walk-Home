@@ -40,6 +40,7 @@ class AddressDetail extends React.Component {
       regType: null,
       currency: null
     }
+
   }
 
   getZillowInfo() {
@@ -53,18 +54,32 @@ class AddressDetail extends React.Component {
           return fetch(zURL)
           .then(response => response.text())
           .then((response) => {
-              parseString(response, function (err, result) {
+              parseString(response, (err, result) => {
                   console.log('result');
                   console.log(result);
                   let zestimate = result['SearchResults:searchresults'].response['0'].results['0'].result['0'].zestimate['0'].amount['0']._;
+                  let lastUpdate= result["SearchResults:searchresults"].response["0"].results["0"].result["0"].zestimate["0"]["last-updated"]["0"];
+                  let comparables= result["SearchResults:searchresults"].response["0"].results["0"].result["0"].links["0"].comparables;
+                  let homeDetails= result["SearchResults:searchresults"].response["0"].results["0"].result["0"].links["0"].homedetails;
+                  let region= result["SearchResults:searchresults"].response["0"].results["0"].result["0"].localRealEstate["0"].region["0"].$.name;
+                  let regType= result["SearchResults:searchresults"].response["0"].results["0"].result["0"].localRealEstate["0"].region["0"].$.type;
+                  let currency= result["SearchResults:searchresults"].response["0"].results["0"].result["0"].zestimate["0"].amount["0"].$.currency;
+
                   console.log('err', err);
                   this.setState({
-                    zestimate: zestimate
-                  })
+                    zestimate: zestimate,
+                    lastUpdate: lastUpdate,
+                    comparables: comparables,
+                    homeDetails: homeDetails,
+                    region: region,
+                    regType: regType,
+                    currency: currency,
+                  });
+
               });
           })
           .catch((err) => {
-              console.log('fetch', err)
+              console.log(err)
           })
     }
   }
@@ -81,7 +96,18 @@ class AddressDetail extends React.Component {
     if (this.state.zestimate ) {
       zillowData = (
         <View>
-          <Text>Zestimate®: {this.state.zestimate}</Text>
+          <Text>Zestimate®: {this.state.zestimate} {this.state.currency}</Text>
+          <Text>Last Updated on: {this.state.lastUpdate}</Text>
+          <Text style={styles.link}
+            onPress={() => Linking.openURL(this.state.comparables)}>
+            Compare to similar houses: {this.props.walkScore}
+          </Text>
+          <Text style={styles.link}
+            onPress={() => Linking.openURL(this.state.comparables)}>
+            Find out home details: {this.state.homeDetails}
+          </Text>
+          <Text>Located in the {this.state.region} region</Text>
+          <Text>Region type: {this.state.regType}</Text>
         </View>
       )
     }
