@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Linking } from "react-native";
+import { Dimensions } from 'react-native';
 import PropTypes from 'prop-types';
 import AddressDetail from './AddressDetail';
 import { WSAPI_KEY } from 'react-native-dotenv';
@@ -135,33 +136,55 @@ s
     }
 
     return (
-      <View>
+      <View style={[styles.listItem, {backgroundColor: this.state.backgroundColor}]}>
         <TouchableOpacity onPress={this.getHouseData}>
-          <View style={[styles.listItem, {backgroundColor: this.state.backgroundColor}]}>
+          <View style={styles.walkScore}>
             <Text style={styles.link}
               onPress={() => Linking.openURL(HELPLINK)}
               >Walk Score®: {this.state.walkScore}
             </Text>
-          <Text style={styles.addressText}>{this.props.streetNum} {this.props.streetName} {this.props.streetType} {this.props.city} {this.props.state}</Text>
           </View>
+            <View style={styles.address}>
+              <Text style={styles.addressText}>
+                {this.props.streetNum} {this.props.streetName} {this.props.streetType}
+              </Text>
+              <Text style={styles.addressText}>
+                {this.props.city} {this.props.state}
+              </Text>
+            </View>
+
         </TouchableOpacity>
         {addressDetail}
       </View>
-)
+    )
   }
 }
 
 const styles = StyleSheet.create({
   listItem: {
+    width: (Dimensions.get('window').width*.9),
+    flex: 1,
+    flexDirection: 'column'
+  },
+  walkScore: {
     width: "100%",
-    marginBottom: 5,
-    height: ""
+    alignItems: "center",
+    padding: 20
   },
   link: {
-    color: 'blue'
+    color: 'blue',
+    fontSize: 20,
+    flexWrap: 'wrap'
+  },
+  address: {
+    width: "100%",
+    alignItems: 'center',
+    paddingBottom: 20
   },
   addressText:{
-    color: 'black'
+    color: 'black',
+    fontSize: 18,
+    textAlign: "center"
   }
 });
 

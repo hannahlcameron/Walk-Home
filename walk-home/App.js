@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, View} from 'react-native';
-import MainContainer from './components/MainContainer'
+import MainContainer from './components/MainContainer';
+import { Dimensions } from 'react-native'
 
 export default class App extends React.Component {
   render() {
@@ -18,5 +19,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'flex-start',
+    width: Dimensions.get('window').width
   },
 });

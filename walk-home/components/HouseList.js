@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, ScrollView, View, Text} from "react-native";
 import Card from "./Card";
 import PropTypes from 'prop-types';
+import { Dimensions } from 'react-native';
 import house from '../library/addresses.json';
 
 class HouseList extends React.Component {
@@ -48,8 +49,10 @@ class HouseList extends React.Component {
 
 const styles = StyleSheet.create({
   listContainer: {
-    width: "100%",
-    height: "85%"
+    width: Dimensions.get('window').width,
+    minHeight: "45%",
+    maxHeight: "70%",
+    alignItems: 'center'
   }
 });
 

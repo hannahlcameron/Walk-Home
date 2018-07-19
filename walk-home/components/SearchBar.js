@@ -42,10 +42,10 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    height: "15%",
+    height: "30%",
     width: "100%",
     backgroundColor: '#fff',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     justifyContent: 'center',
   },
   textInput: {
