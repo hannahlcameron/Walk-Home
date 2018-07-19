@@ -1,12 +1,11 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View} from 'react-native';
 import MainContainer from './components/MainContainer'
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Welcome to Walk Home!</Text>
         <MainContainer />
       </View>
     );

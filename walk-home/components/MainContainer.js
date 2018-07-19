@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View} from 'react-native';
+import { StyleSheet, View, Text} from 'react-native';
 import SearchBar from './SearchBar';
 import HouseList from './HouseList';
 
@@ -21,6 +21,7 @@ class MainContainer extends React.Component {
 
     return (
       <View style={styles.container}>
+        <Text>Welcome to Walk Home!</Text>
         <SearchBar setCityNameCallback={this.setCityName}/>
         <HouseList cityName={this.state.cityName}/>
       </View>

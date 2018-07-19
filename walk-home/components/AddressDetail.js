@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { ZAPI_KEY } from 'react-native-dotenv';
 
 const parseString = require('react-native-xml2js').parseString;
-const HELPLINK = "https://www.redfin.com/how-walk-score-works"
+const HELPLINK = 'https://www.redfin.com/how-walk-score-works'
 
 // const walkBadgeURL = 'https://www.walkscore.com/badge/bike/3440-Walnut-Avenue-SW-Seattle-WA-98116.svg'
 //
@@ -99,12 +99,12 @@ class AddressDetail extends React.Component {
           <Text>Zestimate®: {this.state.zestimate} {this.state.currency}</Text>
           <Text>Last Updated on: {this.state.lastUpdate}</Text>
           <Text style={styles.link}
-            onPress={() => Linking.openURL(this.state.comparables)}>
-            Compare to similar houses: {this.props.walkScore}
+            onPress={() => Linking.openURL(`${this.state.comparables}`)}>
+            Compare to similar houses
           </Text>
           <Text style={styles.link}
-            onPress={() => Linking.openURL(this.state.comparables)}>
-            Find out home details: {this.state.homeDetails}
+            onPress={() => Linking.openURL(`${this.state.homeDetails}`)}>
+            Find out home details
           </Text>
           <Text>Located in the {this.state.region} region</Text>
           <Text>Region type: {this.state.regType}</Text>
@@ -167,6 +167,9 @@ class AddressDetail extends React.Component {
 const styles = StyleSheet.create({
   button: {
     color: 'pink'
+  },
+  link: {
+    color: 'blue'
   },
   modalContainer: {
     margin: 22

@@ -40,6 +40,7 @@ class Card extends React.Component {
     })
   }
 
+s
   getWalkScore() {
     let wsURL = 'http://api.walkscore.com/score?format=json&address=3440%20Walnut%20Ave%20SW%20Seattle%20WA&lat=47.5718752&lon=-122.3835876&transit=1&bike=1&wsapikey=' + WSAPI_KEY
 
@@ -154,7 +155,7 @@ const styles = StyleSheet.create({
   listItem: {
     width: "100%",
     marginBottom: 5,
-    padding: 10,
+    height: ""
   },
   link: {
     color: 'blue'
