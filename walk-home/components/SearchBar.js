@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, TextInput, View, Button } from 'react-native';
+import { StyleSheet, TextInput, View} from 'react-native';
+import Button from 'react-native-button';
 import PropTypes from 'prop-types';
 
 export default class App extends React.Component {
@@ -35,9 +36,11 @@ export default class App extends React.Component {
         value={this.state.cityName}
         onChangeText={this.cityNameChangedHandler}
         />
-        <Button
-          style={styles.searchButton}
-           title="Search!" onPress={this.onSubmitQuery}/>
+        <Button style={styles.searchButton}
+          containerStyle={styles.searchButtonContainer}
+          onPress={() => this.onSubmitQuery()}>
+          Search!
+        </Button>
       </View>
     );
   }
@@ -61,7 +64,12 @@ const styles = StyleSheet.create({
   },
   searchButton: {
     backgroundColor: "#373c51",
-    borderWidth: 2,
-    borderColor: "black"
+    color: "#FFF"
+  },
+  searchButtonContainer: {
+    padding: 10,
+    overflow:'hidden',
+    borderRadius: 5,
+    backgroundColor: "#373c51"
   }
 });
