@@ -35,6 +35,7 @@ export default class App extends React.Component {
         placeholderTextColor={'#FFF'}
         value={this.state.cityName}
         onChangeText={this.cityNameChangedHandler}
+        underlineColorAndroid={"transparent"}
         />
         <Button style={styles.searchButton}
           containerStyle={styles.searchButtonContainer}
