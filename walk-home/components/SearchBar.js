@@ -34,7 +34,9 @@ export default class App extends React.Component {
         value={this.state.cityName}
         onChangeText={this.cityNameChangedHandler}
         />
-        <Button title="Search!" onPress={this.onSubmitQuery}/>
+        <Button
+          style={styles.searchButton}
+           title="Search!" onPress={this.onSubmitQuery}/>
       </View>
     );
   }
@@ -44,7 +46,7 @@ const styles = StyleSheet.create({
   container: {
     height: "30%",
     width: "100%",
-    backgroundColor: '#fff',
+    backgroundColor:'transparent',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -53,5 +55,10 @@ const styles = StyleSheet.create({
     borderColor: "black",
     borderWidth: 1,
     padding: 10
+  },
+  searchButton: {
+    color: "#B39765",
+    borderWidth: 2,
+    borderColor: "black"
   }
 });

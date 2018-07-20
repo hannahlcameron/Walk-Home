@@ -1,8 +1,7 @@
 import React from "react";
-import { StyleSheet, ScrollView, View, Text} from "react-native";
+import { StyleSheet, ScrollView, View, Text, Dimensions} from "react-native";
 import Card from "./Card";
 import PropTypes from 'prop-types';
-import { Dimensions } from 'react-native';
 import house from '../library/addresses.json';
 
 class HouseList extends React.Component {
@@ -10,13 +9,21 @@ class HouseList extends React.Component {
     cityName: PropTypes.string.isRequired
   }
 
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     houses: []
+  //   }
+  //
+  // }
+
   render() {
     let searchResults;
 
     if (this.props.cityName === '') {
       searchResults = (
-        <View>
-          <Text>Enter a city name to get your search going!</Text>
+        <View style={styles.results}>
+          <Text style={styles.resultText}>Enter a city name to get your search going!</Text>
         </View>)
 
     } else if (this.props.cityName.toLowerCase() === 'seattle') {
@@ -33,8 +40,8 @@ class HouseList extends React.Component {
       )
     } else {
       searchResults = (
-        <View>
-          <Text>Oops! No houses were found in {this.props.cityName}</Text>
+        <View style={styles.results}>
+          <Text style={styles.resultText}>Oops! No houses were found in {this.props.cityName}</Text>
         </View>
       )
     }
@@ -52,7 +59,17 @@ const styles = StyleSheet.create({
     width: Dimensions.get('window').width,
     minHeight: "45%",
     maxHeight: "70%",
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor:'transparent'
+  },
+  results: {
+    backgroundColor:'#5f3c2975',
+    width: (Dimensions.get('window').width*.75),
+
+  },
+  resultText: {
+    color: "#fff",
+    fontSize: 25
   }
 });
 
