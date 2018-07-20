@@ -63,8 +63,11 @@ const styles = StyleSheet.create({
     backgroundColor:'transparent'
   },
   results: {
-    backgroundColor:'#5f3c2975',
+    backgroundColor:'#373c51',
     width: (Dimensions.get('window').width*.75),
+    borderColor: '#373c51',
+    borderWidth: 2,
+    borderRadius: 5
 
   },
   resultText: {

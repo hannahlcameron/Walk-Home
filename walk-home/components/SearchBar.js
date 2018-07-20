@@ -31,6 +31,7 @@ export default class App extends React.Component {
         <TextInput
         style={styles.textInput}
         placeholder='Enter your desired city'
+        placeholderTextColor={'#FFF'}
         value={this.state.cityName}
         onChangeText={this.cityNameChangedHandler}
         />
@@ -53,11 +54,12 @@ const styles = StyleSheet.create({
   textInput: {
     width: 300,
     borderColor: "black",
-    borderWidth: 1,
-    padding: 10
+    borderWidth: 2,
+    padding: 10,
+    backgroundColor: "#373c51",
   },
   searchButton: {
-    color: "#B39765",
+    backgroundColor: "#373c51",
     borderWidth: 2,
     borderColor: "black"
   }

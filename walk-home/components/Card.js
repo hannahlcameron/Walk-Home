@@ -136,7 +136,7 @@ s
     }
 
     return (
-      <View style={[styles.listItem, {backgroundColor: this.state.backgroundColor}]}>
+      <View style={[styles.listItem, {backgroundColor: this.state.backgroundColor}, {borderColor: this.state.backgroundColor}]}>
         <TouchableOpacity onPress={this.getHouseData}>
           <View style={styles.walkScore}>
             <Text style={styles.link}
@@ -164,7 +164,9 @@ const styles = StyleSheet.create({
   listItem: {
     width: (Dimensions.get('window').width*.9),
     flex: 1,
-    flexDirection: 'column'
+    flexDirection: 'column',
+    borderWidth: 2,
+    borderRadius: 5
   },
   walkScore: {
     width: "100%",

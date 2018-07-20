@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   welcome: {
-    backgroundColor: "#B39765",
+    backgroundColor: "#373c51",
     padding: 15
 
   },
