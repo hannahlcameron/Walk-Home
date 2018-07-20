@@ -28,7 +28,7 @@ class Card extends React.Component {
       transitDescription: null,
       transitSummary: null,
       selectedCard: false,
-      backgroundColor: '#eee'
+      wsColor: '#eee'
     }
   }
 
@@ -92,7 +92,7 @@ s
       color = '#0CCA4A'
     }
     this.setState({
-      backgroundColor: color
+      wsColor: color
     });
     console.log('end of setBackgroundColor');
     console.log(this.state.walkScore);
@@ -130,13 +130,14 @@ s
           transitDescription={this.state.transitDescription}
           transitSummary={this.state.transitSummary}
           selected={this.state.selectedCard}
+          wsColor={this.state.wsColor}
           onModalClosed={this.requestModalClosed}
           />)
 
     }
 
     return (
-      <View style={[styles.listItem, {backgroundColor: this.state.backgroundColor}, {borderColor: this.state.backgroundColor}]}>
+      <View style={[styles.listItem, {backgroundColor: this.state.wsColor}, {borderColor: this.state.wsColor}]}>
         <TouchableOpacity onPress={this.getHouseData}>
           <View style={styles.walkScore}>
             <Text style={styles.link}

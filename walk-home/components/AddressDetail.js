@@ -1,5 +1,6 @@
 import React from "react";
-import { Modal, View, Text, Button, Linking, StyleSheet} from "react-native";
+import { Modal, View, Text, Linking, StyleSheet, Dimensions} from "react-native";
+import Button from 'react-native-button';
 import PropTypes from 'prop-types';
 import { ZAPI_KEY } from 'react-native-dotenv';
 
@@ -26,6 +27,7 @@ class AddressDetail extends React.Component {
     transitDescription: PropTypes.string,
     transitSummary: PropTypes.string,
     selected: PropTypes.bool.isRequired,
+    wsColor: PropTypes.string,
     onModalClosed: PropTypes.func.isRequired
   }
 
@@ -38,7 +40,8 @@ class AddressDetail extends React.Component {
       homeDetails: null,
       region: null,
       regType: null,
-      currency: null
+      currency: null,
+
     }
 
   }
@@ -116,31 +119,45 @@ class AddressDetail extends React.Component {
 
     if (this.props.selected) {
       modalContent = (
-        <View>
-          <View>
+        <View style={styles.modal}>
+
+          <View style={styles.address}>
             <Text style={styles.addressText}>
               {this.props.streetNum} {this.props.streetName} {this.props.streetType} {this.props.city} {this.props.state}
             </Text>
-            <Text style={styles.link}
-              onPress={() => Linking.openURL(HELPLINK)}
-              >Walk Score®: {this.props.walkScore}
-            </Text>
-            <Text>{this.props.walkDescription}</Text>
-            <Text style={styles.link}
-              onPress={() => Linking.openURL(HELPLINK)}
-              >Bike Score®: {this.props.bikeScore}
-            </Text>
-            <Text>{this.props.bikeDescription}</Text>
-            <Text style={styles.link}
-              onPress={() => Linking.openURL(HELPLINK)}
-              >Transit Score®: {this.props.transitScore}
-            </Text>
-            <Text>{this.props.transitDescription}</Text>
-            <Text>{this.props.transitSummary}</Text>
           </View>
-          <View>
+
+          <View style={styles.scores}>
+            <View style={[styles.listItem, {backgroundColor: this.props.wsColor}, {borderColor: this.state.wsColor}]}>
+              <Text style={styles.link}
+                onPress={() => Linking.openURL(HELPLINK)}
+                >Walk Score®: {this.props.walkScore}
+              </Text>
+              <Text>{this.props.walkDescription}</Text>
+            </View>
+
+            <View style={[styles.listItem, {backgroundColor: this.state.wsColor}, {borderColor: this.state.wsColor}]}>
+              <Text style={styles.link}
+                onPress={() => Linking.openURL(HELPLINK)}
+                >Bike Score®: {this.props.bikeScore}
+              </Text>
+              <Text>{this.props.bikeDescription}</Text>
+            </View>
+
+            <View style={[styles.listItem, {backgroundColor: this.state.wsColor}, {borderColor: this.state.wsColor}]}>
+              <Text style={styles.link}
+                onPress={() => Linking.openURL(HELPLINK)}
+                >Transit Score®: {this.props.transitScore}
+              </Text>
+              <Text>{this.props.transitDescription}</Text>
+              <Text>{this.props.transitSummary}</Text>
+            </View>
+          </View>
+
+          <View style={styles.zillow}>
             {zillowData}
           </View>
+
         </View>
 
       )
@@ -151,11 +168,11 @@ class AddressDetail extends React.Component {
         <View style={styles.modalContainer}>
           {modalContent}
           <View>
-            <Button
-              style={styles.button}
-              title='Close'
-              onPress={this.props.onModalClosed}
-              />
+            <Button style={styles.closeButton}
+              containerStyle={styles.closeButtonContainer}
+              onPress={() => this.props.onModalClosed()}>
+              Return to Results
+            </Button>
           </View>
         </View>
       </Modal>
@@ -165,14 +182,52 @@ class AddressDetail extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  button: {
-    color: 'pink'
+  modalContainer: {
+    margin: 22,
+    height: (Dimensions.get('window').height)
+  },
+  modal: {
+    flex: 1
+  },
+  address: {
+    width: "100%",
+    alignItems: 'center',
+    paddingBottom: 20
+  },
+  addressText:{
+    color: 'black',
+    fontSize: 18,
+    textAlign: "center"
+  },
+  scores: {
+    flex: 3,
+    width: (Dimensions.get('window').width*.9),
+    alignItems: "center",
+    paddingTop: 20,
+    paddingBottom: 20
+
+  },
+  listItem: {
+    width: (Dimensions.get('window').width*.9),
+    flexDirection: 'column',
+    borderWidth: 2,
+    borderRadius: 5
   },
   link: {
     color: 'blue'
   },
-  modalContainer: {
-    margin: 22
+  zillow: {
+    flex: 3
+  },
+  closeButton: {
+    backgroundColor: "#373c51",
+    color: "#FFF"
+  },
+  closeButtonContainer: {
+    padding: 10,
+    overflow:'hidden',
+    borderRadius: 5,
+    backgroundColor: "#373c51"
   }
 });
 
