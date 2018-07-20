@@ -167,7 +167,7 @@ class AddressDetail extends React.Component {
       <Modal visible={this.props.selected} onRequestClose={this.props.onModalClosed}>
         <View style={styles.modalContainer}>
           {modalContent}
-          <View>
+          <View style={styles.buttonContainer}>
             <Button style={styles.closeButton}
               containerStyle={styles.closeButtonContainer}
               onPress={() => this.props.onModalClosed()}>
@@ -184,10 +184,10 @@ class AddressDetail extends React.Component {
 const styles = StyleSheet.create({
   modalContainer: {
     margin: 22,
-    height: (Dimensions.get('window').height)
+    height: "100%"
   },
   modal: {
-    flex: 1
+    height: "90%"
   },
   address: {
     width: "100%",
@@ -218,6 +218,9 @@ const styles = StyleSheet.create({
   },
   zillow: {
     flex: 3
+  },
+  buttonContainer: {
+    height: "10%"
   },
   closeButton: {
     backgroundColor: "#373c51",
