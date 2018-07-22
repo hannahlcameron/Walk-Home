@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, ScrollView, View, Text, Dimensions} from "react-native";
+import { StyleSheet, FlatList, View, Text, Dimensions} from "react-native";
 import Card from "./Card";
 import PropTypes from 'prop-types';
 import houses from '../library/addresses.json';
@@ -14,7 +14,7 @@ class HouseList extends React.Component {
     this.state = {
       houses: []
     }
-  
+
   }
 
   render() {
@@ -27,21 +27,38 @@ class HouseList extends React.Component {
         </View>)
 
     } else if (this.props.cityName.toLowerCase() === 'seattle') {
-
-
-
-
-      searchResults =(
-        <ScrollView>
-          <Card
-            streetNum={house[0]["streetNum"]}
-            streetName={house[0]["streetName"]}
-            streetType={house[0]["streetType"]}
-            city={house[0]["city"]}
-            state={house[0]["state"]}
-          />
-        </ScrollView>
+      console.log("here's what houses is");
+      console.log(houses);
+      searchResults = (
+        <FlatList
+          data={houses}
+          renderItem={({house, index}) => (
+                <Card
+                  key={index}
+                  streetNum={house.streetNum}
+                  streetName={house.streetName}
+                  streetType={house.streetType}
+                  city={house.city}
+                  state={house.state}
+                />
+          )}
+        />
       )
+
+
+
+
+      // searchResults =(
+      //   <ScrollView>
+      //     <Card
+      //       streetNum={house[0]["streetNum"]}
+      //       streetName={house[0]["streetName"]}
+      //       streetType={house[0]["streetType"]}
+      //       city={house[0]["city"]}
+      //       state={house[0]["state"]}
+      //     />
+      //   </ScrollView>
+      // )
     } else {
       searchResults = (
         <View style={styles.results}>
