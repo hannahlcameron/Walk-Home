@@ -32,14 +32,13 @@ class HouseList extends React.Component {
       searchResults = (
         <FlatList
           data={houses}
-          renderItem={({house, index}) => (
+          renderItem={({item}) => (
                 <Card
-                  key={index}
-                  streetNum={house.streetNum}
-                  streetName={house.streetName}
-                  streetType={house.streetType}
-                  city={house.city}
-                  state={house.state}
+                  streetNum={item.streetNum}
+                  streetName={item.streetName}
+                  streetType={item.streetType}
+                  city={item.city}
+                  state={item.state}
                 />
           )}
         />
