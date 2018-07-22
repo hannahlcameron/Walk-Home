@@ -6,7 +6,17 @@
     "streetType": "Ave SW",
     "city": "Seattle",
     "state": "WA",
-    "latitude": 47.5718752,
-    "longitude": 122.3835876
+    "latitude": "47.5718752",
+    "longitude": "-122.3835876"
+  },
+  {
+    "key": 1,
+    "streetNum": "5011",
+    "streetName": "25th",
+    "streetType": "Ave SW",
+    "city": "Seattle",
+    "state": "WA",
+    "latitude": "47.5570585",
+    "longitude": "-122.3642801"
   }
 ]

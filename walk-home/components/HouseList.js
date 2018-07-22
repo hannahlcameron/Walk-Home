@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, ScrollView, View, Text, Dimensions} from "react-native";
 import Card from "./Card";
 import PropTypes from 'prop-types';
-import house from '../library/addresses.json';
+import houses from '../library/addresses.json';
 
 class HouseList extends React.Component {
   static propTypes = {
@@ -27,6 +27,10 @@ class HouseList extends React.Component {
         </View>)
 
     } else if (this.props.cityName.toLowerCase() === 'seattle') {
+
+      
+
+
       searchResults =(
         <ScrollView>
           <Card
