@@ -9,13 +9,13 @@ class HouseList extends React.Component {
     cityName: PropTypes.string.isRequired
   }
 
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     houses: []
-  //   }
-  //
-  // }
+  constructor() {
+    super();
+    this.state = {
+      houses: []
+    }
+  
+  }
 
   render() {
     let searchResults;
@@ -28,7 +28,7 @@ class HouseList extends React.Component {
 
     } else if (this.props.cityName.toLowerCase() === 'seattle') {
 
-      
+
 
 
       searchResults =(
