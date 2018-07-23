@@ -54,10 +54,6 @@ s
     return fetch(wsURL)
     .then((response) => response.json())
     .then((responseJson) => {
-      console.log('in fetch ... .then');
-      console.log(responseJson);
-      console.log(responseJson.transit);
-      console.log(responseJson.bike);
       this.setState({
         walkScore: responseJson.walkscore,
         walkDescription: responseJson.description,
@@ -72,7 +68,6 @@ s
       this.setBikeColor();
     })
     .catch((error) => {
-      console.log('in fetch .. .catch');
       console.log(error);
       this.setState({
         walkScore: 'WS Unavailable'
@@ -156,7 +151,6 @@ s
     let addressDetail;
 
     if (this.state.selectedCard) {
-      console.log();
       addressDetail = (
         <AddressDetail
           streetNum={this.props.streetNum}

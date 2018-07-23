@@ -121,7 +121,7 @@ class AddressDetail extends React.Component {
 
           <View style={styles.location}>
 
-            <View>
+            <View style={styles.topLocation}>
               <Text style={styles.link}
                 onPress={() => Linking.openURL(`${this.state.mapview}`)}>
                 Map this home!
@@ -129,7 +129,7 @@ class AddressDetail extends React.Component {
               <Text style={styles.detailText}>Region type: {this.state.regType}</Text>
             </View>
 
-            <View>
+            <View style={styles.bottomLocation}>
               <Text style={styles.detailText}>Located in the {this.state.region} region</Text>
             </View>
 
@@ -251,23 +251,26 @@ const styles = StyleSheet.create({
   },
   address: {
     width: "100%",
-    alignItems: 'center',
-    paddingBottom: 20
+    backgroundColor: "#373c51",
+    justifyContent: "center",
+    borderWidth: 2,
+    borderRadius: 5,
+    borderColor: '#373c51'
   },
   addressText:{
-    color: 'black',
+    color: '#fff',
     fontSize: 20,
-    textAlign: "center"
+    textAlign: "center",
+    alignSelf: "center",
+    paddingTop: 5,
+    paddingBottom: 5
   },
   scores: {
     flex: 2,
     width: (Dimensions.get('window').width*.9),
     alignItems: "center",
-    paddingTop: 20,
-    paddingBottom: 20,
-    borderWidth: 2,
-    borderRadius: 5,
-    borderColor: '#373c51'
+    paddingTop: 10,
+    paddingBottom: 10
 
   },
   listItemWalk: {
@@ -321,10 +324,18 @@ const styles = StyleSheet.create({
   zestimate: {
     fontSize: 20
   },
-  // updated: {
-  //   fontSize: 16
-  // },
+
   location: {
+    flex: 1,
+    alignItems: "stretch"
+  },
+  topLocation: {
+    flex: 2,
+    flexDirection: "row",
+    justifyContent: "space-around"
+
+  },
+  bottomLocation: {
     flex: 1,
     alignItems: "stretch"
   },
