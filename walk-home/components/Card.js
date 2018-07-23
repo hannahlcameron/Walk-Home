@@ -14,7 +14,9 @@ class Card extends React.Component {
     streetName: PropTypes.string.isRequired,
     streetType: PropTypes.string.isRequired,
     city: PropTypes.string.isRequired,
-    state: PropTypes.string.isRequired
+    state: PropTypes.string.isRequired,
+    lat: PropTypes.string.isRequired,
+    long: PropTypes.string.isRequired
   }
 
   constructor(){
@@ -43,7 +45,7 @@ class Card extends React.Component {
 
 s
   getWalkScore() {
-    let wsURL = 'http://api.walkscore.com/score?format=json&address=3440%20Walnut%20Ave%20SW%20Seattle%20WA&lat=47.5718752&lon=-122.3835876&transit=1&bike=1&wsapikey=' + WSAPI_KEY
+    let wsURL = `http://api.walkscore.com/score?format=json&address=${this.props.streetNum}%20${this.props.streetName}%20SW%20${this.props.city}%20${this.props.state}&lat=${this.props.lat}&lon=${this.props.long}&transit=1&bike=1&wsapikey=` + WSAPI_KEY
 
     console.log('starting WS-API CALL');
     console.log(wsURL);

@@ -39,6 +39,8 @@ class HouseList extends React.Component {
                   streetType={item.streetType}
                   city={item.city}
                   state={item.state}
+                  lat={item.latitude}
+                  long={item.longitude}
                 />
           )}
         />
