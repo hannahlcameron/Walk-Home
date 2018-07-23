@@ -1,6 +1,6 @@
 [
   {
-    "key": 1,
+    "key": "1",
     "streetNum": "3440",
     "streetName": "Walnut",
     "streetType": "Ave SW",
@@ -10,7 +10,7 @@
     "longitude": "-122.3835876"
   },
   {
-    "key": 2,
+    "key": "2",
     "streetNum": "5011",
     "streetName": "25th",
     "streetType": "Ave SW",
@@ -18,5 +18,85 @@
     "state": "WA",
     "latitude": "47.5570585",
     "longitude": "-122.3642801"
+  },
+  {
+    "key": "3",
+    "streetNum": "4715",
+    "streetName": "50th",
+    "streetType": "Ave S",
+    "city": "Seattle",
+    "state": "WA",
+    "latitude": "47.5601014",
+    "longitude": "-122.2731923"
+  },
+  {
+    "key": "4",
+    "streetNum": "2712",
+    "streetName": "S Elmwood",
+    "streetType": "Pl",
+    "city": "Seattle",
+    "state": "WA",
+    "latitude": "47.5927773",
+    "longitude": "-122.297815"
+  },
+  {
+    "key": "5",
+    "streetNum": "11726",
+    "streetName": "Phinney",
+    "streetType": "Ave N",
+    "city": "Seattle",
+    "state": "WA",
+    "latitude": "47.714833",
+    "longitude": "-122.354083"
+  },
+  {
+    "key": "6",
+    "streetNum": "4084",
+    "streetName": "Letitia",
+    "streetType": "Ave S",
+    "city": "Seattle",
+    "state": "WA",
+    "latitude": "47.5669461",
+    "longitude": "-122.2920118"
+  },
+  {
+    "key": "7",
+    "streetNum": "124",
+    "streetName": "24th",
+    "streetType": "Ave N",
+    "city": "Seattle",
+    "state": "WA",
+    "latitude": "47.619745",
+    "longitude": "-122.3014721"
+  },
+  {
+    "key": "8",
+    "streetNum": "7033",
+    "streetName": "54th",
+    "streetType": "Ave NE",
+    "city": "Seattle",
+    "state": "WA",
+    "latitude": "47.6803907",
+    "longitude": "-122.2706515"
+  },
+  {
+    "key": "9",
+    "streetNum": "2620",
+    "streetName": "NW 98th",
+    "streetType": "St",
+    "city": "Seattle",
+    "state": "WA",
+    "latitude": "47.7002857",
+    "longitude": "-122.3922334"
+  },
+  {
+    "key": "10",
+    "streetNum": "847",
+    "streetName": "S Rose",
+    "streetType": "St",
+    "city": "Seattle",
+    "state": "WA",
+    "latitude": "47.5288474",
+    "longitude": "-122.321565"
   }
 ]

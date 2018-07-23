@@ -30,7 +30,9 @@ class Card extends React.Component {
       transitDescription: null,
       transitSummary: null,
       selectedCard: false,
-      wsColor: '#eee'
+      wsColor: '#eee',
+      bsColor: '#eee',
+      tsColor: '#eee'
     }
   }
 
@@ -65,7 +67,9 @@ s
         transitDescription: responseJson.transit.description,
         transitSummary: responseJson.transit.summary
       })
-      this.setBackgroundColor()
+      this.setWalkColor();
+      this.setTransitColor();
+      this.setBikeColor();
     })
     .catch((error) => {
       console.log('in fetch .. .catch');
@@ -76,9 +80,7 @@ s
     });
   }
 
-  setBackgroundColor() {
-    console.log('beginning of setBackgroundColor');
-    console.log(this.state.walkScore);
+  setWalkColor() {
     let color = '#eee'
     if (this.state.walkScore < 51) {
       color = '#E0590B'
@@ -96,8 +98,46 @@ s
     this.setState({
       wsColor: color
     });
-    console.log('end of setBackgroundColor');
-    console.log(this.state.walkScore);
+  }
+
+  setBikeColor() {
+    let color = '#eee'
+    if (this.state.bikeScore < 51) {
+      color = '#E0590B'
+    } else if ((this.state.bikeScore > 50) && (this.state.bikeScore < 61)) {
+      color = '#E0A331'
+    } else if ((this.state.bikeScore > 60) && (this.state.bikeScore < 71)) {
+      color = '#CEC737'
+    } else if ((this.state.bikeScore > 70) && (this.state.bikeScore < 81)) {
+      color = '#9ACE5F'
+    } else if ((this.state.bikeScore > 80) && (this.state.bikeScore < 91)) {
+      color = '#7ECA50'
+    } else if (this.state.bikeScore > 90) {
+      color = '#0CCA4A'
+    }
+    this.setState({
+      bsColor: color
+    });
+  }
+
+  setTransitColor() {
+    let color = '#eee'
+    if (this.state.transitScore < 51) {
+      color = '#E0590B'
+    } else if ((this.state.transitScore > 50) && (this.state.transitScore < 61)) {
+      color = '#E0A331'
+    } else if ((this.state.transitScore > 60) && (this.state.transitScore < 71)) {
+      color = '#CEC737'
+    } else if ((this.state.transitScore > 70) && (this.state.transitScore < 81)) {
+      color = '#9ACE5F'
+    } else if ((this.state.transitScore > 80) && (this.state.transitScore < 91)) {
+      color = '#7ECA50'
+    } else if (this.state.transitScore > 90) {
+      color = '#0CCA4A'
+    }
+    this.setState({
+      tsColor: color
+    });
   }
 
   componentDidMount() {
@@ -133,9 +173,10 @@ s
           transitSummary={this.state.transitSummary}
           selected={this.state.selectedCard}
           wsColor={this.state.wsColor}
+          bsColor={this.state.bsColor}
+          tsColor={this.state.tsColor}
           onModalClosed={this.requestModalClosed}
           />)
-
     }
 
     return (

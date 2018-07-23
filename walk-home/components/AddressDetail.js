@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, View, Text, Linking, StyleSheet, Dimensions} from "react-native";
+import { Modal, View, Text, Linking, StyleSheet, Dimensions, Image} from "react-native";
 import Button from 'react-native-button';
 import PropTypes from 'prop-types';
 import { ZAPI_KEY } from 'react-native-dotenv';
@@ -28,6 +28,8 @@ class AddressDetail extends React.Component {
     transitSummary: PropTypes.string,
     selected: PropTypes.bool.isRequired,
     wsColor: PropTypes.string,
+    bsColor: PropTypes.string,
+    tsColor: PropTypes.string,
     onModalClosed: PropTypes.func.isRequired
   }
 
@@ -41,7 +43,9 @@ class AddressDetail extends React.Component {
       region: null,
       regType: null,
       currency: null,
-
+      mapView: null,
+      streetAddress: null,
+      regionRE: null
     }
 
   }
@@ -49,7 +53,7 @@ class AddressDetail extends React.Component {
   getZillowInfo() {
     if (this.props.selected) {
           console.log(`getting Zillow info for ${this.props.streetNum}`);
-          let zURL = 'http://www.zillow.com/webservice/GetSearchResults.htm?address=3440%20Walnut%20Ave%20SW%20&citystatezip=Seattle%20WA&zws-id=' + ZAPI_KEY
+          let zURL = `http://www.zillow.com/webservice/GetSearchResults.htm?address=${this.props.streetNum} ${this.props.streetName}&citystatezip=${this.props.city} ${this.props.state}&zws-id=` + ZAPI_KEY
 
           console.log('starting Z-API CALL');
           console.log(zURL);
@@ -64,9 +68,13 @@ class AddressDetail extends React.Component {
                   let lastUpdate= result["SearchResults:searchresults"].response["0"].results["0"].result["0"].zestimate["0"]["last-updated"]["0"];
                   let comparables= result["SearchResults:searchresults"].response["0"].results["0"].result["0"].links["0"].comparables;
                   let homeDetails= result["SearchResults:searchresults"].response["0"].results["0"].result["0"].links["0"].homedetails;
+                  let mapView= result["SearchResults:searchresults"].response["0"].results["0"].result["0"].links["0"].mapthishome;
+                  let streetAddress= result["SearchResults:searchresults"].response["0"].results["0"].result["0"].address["0"].street;
                   let region= result["SearchResults:searchresults"].response["0"].results["0"].result["0"].localRealEstate["0"].region["0"].$.name;
                   let regType= result["SearchResults:searchresults"].response["0"].results["0"].result["0"].localRealEstate["0"].region["0"].$.type;
+                  let regionRE= result["SearchResults:searchresults"].response["0"].results["0"].result["0"].localRealEstate["0"].region["0"].links["0"].forSale
                   let currency= result["SearchResults:searchresults"].response["0"].results["0"].result["0"].zestimate["0"].amount["0"].$.currency;
+
 
                   console.log('err', err);
                   this.setState({
@@ -74,6 +82,9 @@ class AddressDetail extends React.Component {
                     lastUpdate: lastUpdate,
                     comparables: comparables,
                     homeDetails: homeDetails,
+                    mapView: mapView,
+                    streetAddress: streetAddress,
+                    regionRE: regionRE,
                     region: region,
                     regType: regType,
                     currency: currency,
@@ -99,18 +110,46 @@ class AddressDetail extends React.Component {
     if (this.state.zestimate ) {
       zillowData = (
         <View>
-          <Text>Zestimate®: {this.state.zestimate} {this.state.currency}</Text>
-          <Text>Last Updated on: {this.state.lastUpdate}</Text>
-          <Text style={styles.link}
-            onPress={() => Linking.openURL(`${this.state.comparables}`)}>
-            Compare to similar houses
-          </Text>
-          <Text style={styles.link}
-            onPress={() => Linking.openURL(`${this.state.homeDetails}`)}>
-            Find out home details
-          </Text>
-          <Text>Located in the {this.state.region} region</Text>
-          <Text>Region type: {this.state.regType}</Text>
+
+          <View>
+            <Text>Zestimate®: {this.state.zestimate} {this.state.currency}</Text>
+            <Text>Last Updated on: {this.state.lastUpdate}</Text>
+          </View>
+
+          <View>
+            <Text style={styles.link}
+              onPress={() => Linking.openURL(`${this.state.mapview}`)}>
+              Locate this home!
+            </Text>
+          </View>
+
+          <View>
+            <Text>Located in the {this.state.region} region</Text>
+            <Text>Region type: {this.state.regType}</Text>
+          </View>
+
+          <View>
+            <Text style={styles.link}
+              onPress={() => Linking.openURL(`${this.state.homeDetails}`)}>
+              See more details for {this.state.streetAddress} on Zillow
+            </Text>
+            <Text style={styles.link}
+              onPress={() => Linking.openURL(`${this.state.homeDetails}`)}>
+              See {this.state.region} Real Estate on Zillow
+            </Text>
+          </View>
+
+          <View>
+            <Image source={require('../assets/Zillowlogo_200x50.gif')}
+        />
+          </View>
+
+        </View>
+      )
+    } else {
+      zillowData = (
+        <View style={styles.loading}>
+          <Text style={styles.loadingText}>Additional Information Loading...</Text>
         </View>
       )
     }
@@ -128,7 +167,7 @@ class AddressDetail extends React.Component {
           </View>
 
           <View style={styles.scores}>
-            <View style={[styles.listItem, {backgroundColor: this.props.wsColor}, {borderColor: this.state.wsColor}]}>
+            <View style={[styles.listItem, {backgroundColor: this.props.wsColor}]}>
               <Text style={styles.link}
                 onPress={() => Linking.openURL(HELPLINK)}
                 >Walk Score®: {this.props.walkScore}
@@ -136,7 +175,7 @@ class AddressDetail extends React.Component {
               <Text>{this.props.walkDescription}</Text>
             </View>
 
-            <View style={[styles.listItem, {backgroundColor: this.state.wsColor}, {borderColor: this.state.wsColor}]}>
+            <View style={[styles.listItemMiddle, {backgroundColor: this.props.bsColor}]}>
               <Text style={styles.link}
                 onPress={() => Linking.openURL(HELPLINK)}
                 >Bike Score®: {this.props.bikeScore}
@@ -144,7 +183,7 @@ class AddressDetail extends React.Component {
               <Text>{this.props.bikeDescription}</Text>
             </View>
 
-            <View style={[styles.listItem, {backgroundColor: this.state.wsColor}, {borderColor: this.state.wsColor}]}>
+            <View style={[styles.listItem, {backgroundColor: this.props.tsColor}]}>
               <Text style={styles.link}
                 onPress={() => Linking.openURL(HELPLINK)}
                 >Transit Score®: {this.props.transitScore}
@@ -189,6 +228,19 @@ const styles = StyleSheet.create({
   modal: {
     height: "90%"
   },
+  loading: {
+    backgroundColor:'#373c51',
+    width: (Dimensions.get('window').width*.75),
+    borderColor: '#373c51',
+    borderWidth: 2,
+    borderRadius: 5
+
+  },
+  loadingText: {
+    color: "#fff",
+    fontSize: 25,
+    textAlign: 'center'
+  },
   address: {
     width: "100%",
     alignItems: 'center',
@@ -211,13 +263,23 @@ const styles = StyleSheet.create({
     width: (Dimensions.get('window').width*.9),
     flexDirection: 'column',
     borderWidth: 2,
-    borderRadius: 5
+    borderRadius: 5,
+    borderColor: '#373c51'
+  },
+  listItemMiddle: {
+    width: (Dimensions.get('window').width*.9),
+    flexDirection: 'column',
+    borderRightWidth: 2,
+    borderLeftWidth: 2,
+    borderRadius: 5,
+    borderColor: '#373c51'
   },
   link: {
     color: 'blue'
   },
   zillow: {
-    flex: 3
+    flex: 3,
+    alignItems: "center"
   },
   buttonContainer: {
     height: "10%"

@@ -9,13 +9,13 @@ class HouseList extends React.Component {
     cityName: PropTypes.string.isRequired
   }
 
-  constructor() {
-    super();
-    this.state = {
-      houses: []
-    }
-
-  }
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     houses: []
+  //   }
+  //
+  // }
 
   render() {
     let searchResults;
@@ -45,21 +45,6 @@ class HouseList extends React.Component {
           )}
         />
       )
-
-
-
-
-      // searchResults =(
-      //   <ScrollView>
-      //     <Card
-      //       streetNum={house[0]["streetNum"]}
-      //       streetName={house[0]["streetName"]}
-      //       streetType={house[0]["streetType"]}
-      //       city={house[0]["city"]}
-      //       state={house[0]["state"]}
-      //     />
-      //   </ScrollView>
-      // )
     } else {
       searchResults = (
         <View style={styles.results}>
