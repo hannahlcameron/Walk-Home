@@ -112,39 +112,46 @@ class AddressDetail extends React.Component {
     if (this.state.zestimate ) {
 
       zillowData = (
-        <View style={styles.zillow>
+        <View style={styles.zillow}>
 
-          <View>
+          <View style={styles.value}>
             <Text>Zestimate®: {this.state.zestimate} {this.state.currency}</Text>
             <Text>Last Updated on: {this.state.lastUpdate}</Text>
           </View>
 
-          <View>
-            <Text style={styles.link}
-              onPress={() => Linking.openURL(`${this.state.mapview}`)}>
-              Locate this home!
-            </Text>
+          <View style={styles.location}>
+
+            <View>
+              <Text style={styles.link}
+                onPress={() => Linking.openURL(`${this.state.mapview}`)}>
+                Map this home!
+              </Text>
+              <Text>Region type: {this.state.regType}</Text>
+            </View>
+            
+            <View>
+              <Text>Located in the {this.state.region} region</Text>
+            </View>
+
           </View>
 
-          <View>
-            <Text>Located in the {this.state.region} region</Text>
-            <Text>Region type: {this.state.regType}</Text>
-          </View>
+          <View style={styles.attribution}>
 
-          <View>
-            <Text style={styles.link}
-              onPress={() => Linking.openURL(`${this.state.homeDetails}`)}>
-              See more details for {this.state.streetAddress} on Zillow
-            </Text>
-            <Text style={styles.link}
-              onPress={() => Linking.openURL(`${this.state.homeDetails}`)}>
-              See {this.state.region} Real Estate on Zillow
-            </Text>
-          </View>
+            <View>
+              <Text style={styles.link}
+                onPress={() => Linking.openURL(`${this.state.homeDetails}`)}>
+                See more details for {this.state.streetAddress} on Zillow
+              </Text>
+            </View>
 
-          <View>
-            <Image source={require('../assets/Zillowlogo_200x50.gif')}
-        />
+            <View>
+              <Text style={styles.link}
+                onPress={() => Linking.openURL(`${this.state.homeDetails}`)}>
+                See {this.state.region} Real Estate on Zillow
+              </Text>
+              <Image source={require('../assets/Zillowlogo_200x50.gif')}/>
+            </View>
+
           </View>
 
         </View>
@@ -281,6 +288,15 @@ const styles = StyleSheet.create({
   zillow: {
     flex: 3,
     alignItems: "center"
+  },
+  value: {
+    flex: 1
+  },
+  location: {
+    flex: 1
+  },
+  attribution: {
+    flex: 1
   },
   buttonContainer: {
     height: "10%"
