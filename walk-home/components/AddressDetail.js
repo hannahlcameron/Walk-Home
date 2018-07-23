@@ -120,19 +120,12 @@ class AddressDetail extends React.Component {
           </View>
 
           <View style={styles.location}>
-
-            <View style={styles.topLocation}>
               <Text style={styles.link}
                 onPress={() => Linking.openURL(`${this.state.mapview}`)}>
                 Map this home!
               </Text>
-              <Text style={styles.detailText}>Region type: {this.state.regType}</Text>
-            </View>
-
-            <View style={styles.bottomLocation}>
-              <Text style={styles.detailText}>Located in the {this.state.region} region</Text>
-            </View>
-
+              <Text style={styles.infoText}>Region type: {this.state.regType}</Text>
+              <Text style={styles.infoText}>Located in the {this.state.region} region</Text>
           </View>
 
           <View style={styles.attribution}>
@@ -202,14 +195,10 @@ class AddressDetail extends React.Component {
               <Text style={styles.detailText}>{this.props.transitSummary}</Text>
             </View>
           </View>
-
           {zillowData}
-
         </View>
-
       )
     }
-
     return(
       <Modal visible={this.props.selected} onRequestClose={this.props.onModalClosed}>
         <View style={styles.modalContainer}>
@@ -223,9 +212,7 @@ class AddressDetail extends React.Component {
           </View>
         </View>
       </Modal>
-    )
-  }
-
+    )}
 }
 
 const styles = StyleSheet.create({
@@ -234,7 +221,8 @@ const styles = StyleSheet.create({
     height: "100%"
   },
   modal: {
-    height: "90%"
+    height: "90%",
+    justifyContent: "space-between"
   },
   loading: {
     backgroundColor:'#373c51',
@@ -307,7 +295,8 @@ const styles = StyleSheet.create({
   },
   detailText: {
     fontSize: 16,
-    color: '#373c51'
+    color: '#373c51',
+    textAlign: 'center'
   },
   zillow: {
     flex: 3,
@@ -315,36 +304,43 @@ const styles = StyleSheet.create({
     width: (Dimensions.get('window').width*.9),
     borderWidth: 2,
     borderRadius: 5,
-    borderColor: '#373c51'
+    borderColor: '#373c51',
+    justifyContent: "space-between"
   },
   value: {
     flex: 1,
     alignItems: "stretch"
   },
   zestimate: {
-    fontSize: 20
+    color: '#373c51',
+    fontSize: 22
   },
 
   location: {
-    flex: 1,
-    alignItems: "stretch"
-  },
-  topLocation: {
     flex: 2,
-    flexDirection: "row",
-    justifyContent: "space-around"
-
+    // alignItems: "stretch"
   },
-  bottomLocation: {
-    flex: 1,
-    alignItems: "stretch"
+  infoText: {
+    fontSize: 20,
+    color: '#373c51',
+    textAlign: 'center'
   },
+  // topLocation: {
+  //   flex: 1,
+  //   flexDirection: "row",
+  //   justifyContent: "space-between"
+  //
+  // },
+  // bottomLocation: {
+  //   flex: 1,
+  //   alignItems: "stretch"
+  // },
   link: {
     color: 'blue',
     fontSize: 16
   },
   attribution: {
-    flex: 1,
+    flex: 2,
     alignItems: "stretch"
   },
   buttonContainer: {
