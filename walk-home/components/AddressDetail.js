@@ -115,8 +115,8 @@ class AddressDetail extends React.Component {
         <View style={styles.zillow}>
 
           <View style={styles.value}>
-            <Text>Zestimate®: {this.state.zestimate} {this.state.currency}</Text>
-            <Text>Last Updated on: {this.state.lastUpdate}</Text>
+            <Text style={styles.zestimate}>Zestimate®: {this.state.zestimate} {this.state.currency}</Text>
+            <Text style={styles.detailText}>Last Updated on: {this.state.lastUpdate}</Text>
           </View>
 
           <View style={styles.location}>
@@ -126,11 +126,11 @@ class AddressDetail extends React.Component {
                 onPress={() => Linking.openURL(`${this.state.mapview}`)}>
                 Map this home!
               </Text>
-              <Text>Region type: {this.state.regType}</Text>
+              <Text style={styles.detailText}>Region type: {this.state.regType}</Text>
             </View>
-            
+
             <View>
-              <Text>Located in the {this.state.region} region</Text>
+              <Text style={styles.detailText}>Located in the {this.state.region} region</Text>
             </View>
 
           </View>
@@ -177,29 +177,29 @@ class AddressDetail extends React.Component {
           </View>
 
           <View style={styles.scores}>
-            <View style={[styles.listItem, {backgroundColor: this.props.wsColor}]}>
-              <Text style={styles.link}
+            <View style={[styles.listItemWalk, {backgroundColor: this.props.wsColor}]}>
+              <Text style={styles.scoreLink}
                 onPress={() => Linking.openURL(HELPLINK)}
                 >Walk Score®: {this.props.walkScore}
               </Text>
-              <Text>{this.props.walkDescription}</Text>
+              <Text style={styles.detailText}>{this.props.walkDescription}</Text>
             </View>
 
-            <View style={[styles.listItemMiddle, {backgroundColor: this.props.bsColor}]}>
-              <Text style={styles.link}
+            <View style={[styles.listItemBike, {backgroundColor: this.props.bsColor}]}>
+              <Text style={styles.scoreLink}
                 onPress={() => Linking.openURL(HELPLINK)}
                 >Bike Score®: {this.props.bikeScore}
               </Text>
-              <Text>{this.props.bikeDescription}</Text>
+              <Text style={styles.detailText}>{this.props.bikeDescription}</Text>
             </View>
 
-            <View style={[styles.listItem, {backgroundColor: this.props.tsColor}]}>
-              <Text style={styles.link}
+            <View style={[styles.listItemTransit, {backgroundColor: this.props.tsColor}]}>
+              <Text style={styles.scoreLink}
                 onPress={() => Linking.openURL(HELPLINK)}
                 >Transit Score®: {this.props.transitScore}
               </Text>
-              <Text>{this.props.transitDescription}</Text>
-              <Text>{this.props.transitSummary}</Text>
+              <Text style={styles.detailText}>{this.props.transitDescription}</Text>
+              <Text style={styles.detailText}>{this.props.transitSummary}</Text>
             </View>
           </View>
 
@@ -256,47 +256,85 @@ const styles = StyleSheet.create({
   },
   addressText:{
     color: 'black',
-    fontSize: 18,
+    fontSize: 20,
     textAlign: "center"
   },
   scores: {
-    flex: 3,
+    flex: 2,
     width: (Dimensions.get('window').width*.9),
     alignItems: "center",
     paddingTop: 20,
-    paddingBottom: 20
+    paddingBottom: 20,
+    borderWidth: 2,
+    borderRadius: 5,
+    borderColor: '#373c51'
 
   },
-  listItem: {
+  listItemWalk: {
+    flex: 2,
     width: (Dimensions.get('window').width*.9),
     flexDirection: 'column',
     borderWidth: 2,
     borderRadius: 5,
-    borderColor: '#373c51'
+    borderColor: '#373c51',
+    alignItems: 'center'
   },
-  listItemMiddle: {
+  listItemBike: {
+    flex: 2,
     width: (Dimensions.get('window').width*.9),
     flexDirection: 'column',
     borderRightWidth: 2,
     borderLeftWidth: 2,
     borderRadius: 5,
-    borderColor: '#373c51'
+    borderColor: '#373c51',
+    alignItems: 'center'
   },
-  link: {
-    color: 'blue'
+  listItemTransit: {
+    flex: 3,
+    width: (Dimensions.get('window').width*.9),
+    flexDirection: 'column',
+    borderWidth: 2,
+    borderRadius: 5,
+    borderColor: '#373c51',
+    alignItems: 'center'
+  },
+  scoreLink: {
+    color: 'blue',
+    fontSize: 20
+  },
+  detailText: {
+    fontSize: 16,
+    color: '#373c51'
   },
   zillow: {
     flex: 3,
-    alignItems: "center"
+    alignItems: "center",
+    width: (Dimensions.get('window').width*.9),
+    borderWidth: 2,
+    borderRadius: 5,
+    borderColor: '#373c51'
   },
   value: {
-    flex: 1
+    flex: 1,
+    alignItems: "stretch"
   },
+  zestimate: {
+    fontSize: 20
+  },
+  // updated: {
+  //   fontSize: 16
+  // },
   location: {
-    flex: 1
+    flex: 1,
+    alignItems: "stretch"
+  },
+  link: {
+    color: 'blue',
+    fontSize: 16
   },
   attribution: {
-    flex: 1
+    flex: 1,
+    alignItems: "stretch"
   },
   buttonContainer: {
     height: "10%"
