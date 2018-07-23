@@ -74,7 +74,8 @@ const styles = StyleSheet.create({
     width: (Dimensions.get('window').width*.75),
     borderColor: '#373c51',
     borderWidth: 2,
-    borderRadius: 5
+    borderRadius: 5,
+    margin: 10
 
   },
   resultText: {

@@ -105,11 +105,14 @@ class AddressDetail extends React.Component {
 
   render() {
 
+
+
     let zillowData;
 
     if (this.state.zestimate ) {
+
       zillowData = (
-        <View>
+        <View style={styles.zillow>
 
           <View>
             <Text>Zestimate®: {this.state.zestimate} {this.state.currency}</Text>
@@ -193,9 +196,7 @@ class AddressDetail extends React.Component {
             </View>
           </View>
 
-          <View style={styles.zillow}>
-            {zillowData}
-          </View>
+          {zillowData}
 
         </View>
 
