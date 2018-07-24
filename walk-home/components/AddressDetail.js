@@ -65,6 +65,8 @@ class AddressDetail extends React.Component {
                   console.log('result');
                   console.log(result);
                   let zestimate = result['SearchResults:searchresults'].response['0'].results['0'].result['0'].zestimate['0'].amount['0']._;
+                  zestimate = Number(zestimate);
+                  zestimate = (zestimate).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
                   let lastUpdate= result["SearchResults:searchresults"].response["0"].results["0"].result["0"].zestimate["0"]["last-updated"]["0"];
                   let comparables= result["SearchResults:searchresults"].response["0"].results["0"].result["0"].links["0"].comparables;
                   let homeDetails= result["SearchResults:searchresults"].response["0"].results["0"].result["0"].links["0"].homedetails;
@@ -318,7 +320,6 @@ const styles = StyleSheet.create({
     color: '#373c51',
     fontSize: 22
   },
-
   location: {
     flex: 2,
     padding: 5
