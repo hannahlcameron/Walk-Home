@@ -120,7 +120,7 @@ class AddressDetail extends React.Component {
           </View>
 
           <View style={styles.location}>
-              <Text style={styles.link}
+              <Text style={styles.mapLink}
                 onPress={() => Linking.openURL(`${this.state.mapview}`)}>
                 Map this home!
               </Text>
@@ -142,7 +142,9 @@ class AddressDetail extends React.Component {
                 onPress={() => Linking.openURL(`${this.state.homeDetails}`)}>
                 See {this.state.region} Real Estate on Zillow
               </Text>
-              <Image source={require('../assets/Zillowlogo_200x50.gif')}/>
+              <Image
+                 style={styles.logo}
+                source={require('../assets/Zillowlogo_200x50.gif')}/>
             </View>
 
           </View>
@@ -309,7 +311,8 @@ const styles = StyleSheet.create({
   },
   value: {
     flex: 1,
-    alignItems: "stretch"
+    alignItems: "stretch",
+    padding: 5
   },
   zestimate: {
     color: '#373c51',
@@ -318,30 +321,33 @@ const styles = StyleSheet.create({
 
   location: {
     flex: 2,
-    // alignItems: "stretch"
+    padding: 5
   },
   infoText: {
     fontSize: 20,
     color: '#373c51',
     textAlign: 'center'
   },
-  // topLocation: {
-  //   flex: 1,
-  //   flexDirection: "row",
-  //   justifyContent: "space-between"
-  //
-  // },
-  // bottomLocation: {
-  //   flex: 1,
-  //   alignItems: "stretch"
-  // },
-  link: {
+  mapLink: {
     color: 'blue',
-    fontSize: 16
+    fontSize: 20,
+    textAlign: 'center'
   },
   attribution: {
-    flex: 2,
-    alignItems: "stretch"
+    flex: 3,
+    alignItems: "center",
+    paddingTop: 5
+  },
+  link: {
+    color: 'blue',
+    fontSize: 16,
+    padding: 5,
+    textAlign: "center"
+  },
+  logo: {
+    paddingTop: 5,
+    paddingBottom: 5,
+    alignSelf: "center"
   },
   buttonContainer: {
     height: "10%"
