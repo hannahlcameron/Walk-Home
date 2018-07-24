@@ -309,7 +309,8 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 5,
     borderColor: '#373c51',
-    justifyContent: "space-between"
+    justifyContent: "space-between",
+    backgroundColor: '#373c5160'
   },
   value: {
     flex: 1,
@@ -346,8 +347,7 @@ const styles = StyleSheet.create({
     textAlign: "center"
   },
   logo: {
-    paddingTop: 5,
-    paddingBottom: 5,
+    marginTop: 10,
     alignSelf: "center"
   },
   buttonContainer: {
