@@ -22,19 +22,18 @@ class MainContainer extends React.Component {
     return (
         <View>
           <View
-            style={styles.backgroundImage}
+            style={styles.backgroundImageContainer}
             >
             <Image
-              style={{
-                flex: 1,
-                resizeMode: "cover",
-                opacity: .7
-              }}
+              style={styles.backgroundImage}
               source={{uri: 'https://images.pexels.com/photos/277559/pexels-photo-277559.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}}
               />
           </View>
           <View style={styles.container}>
             <View style={styles.welcome}>
+              <Image
+                source={require('../assets/WH_Logo.jpg')}
+                style={styles.whLogo}/>
               <Text style={styles.welcomeText}>Find Your Walk Home!</Text>
             </View>
             <View style={styles.container}>
@@ -58,22 +57,33 @@ const styles = StyleSheet.create({
   },
   welcome: {
     backgroundColor: "#373c51",
-    padding: 15
-
+    flexDirection: "row",
+    width: (Dimensions.get('window').width),
+    height: 62.5
   },
   welcomeText: {
     fontSize: 24,
     // fontWeight: "bold",
     color: "#fff",
-    width: (Dimensions.get('window').width),
-    textAlign: "center"
+    // width: (Dimensions.get('window').width),
+    alignSelf: "center",
+    marginLeft: 35
   },
-  backgroundImage: {
+  backgroundImageContainer: {
     position: 'absolute',
     top: 0,
     left: 0,
     width: '100%',
     height: '100%',
+  },
+  backgroundImage: {
+    flex: 1,
+    resizeMode: "cover",
+    opacity: .7
+  },
+  whLogo: {
+    width: 62.5,
+    height: 62.5,
   }
 });
 export default MainContainer;
