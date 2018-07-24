@@ -64,8 +64,7 @@ class HouseList extends React.Component {
 const styles = StyleSheet.create({
   listContainer: {
     width: Dimensions.get('window').width,
-    minHeight: "45%",
-    maxHeight: "70%",
+    flex: 2,
     alignItems: 'center',
     backgroundColor:'transparent'
   },

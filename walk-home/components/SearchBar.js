@@ -49,7 +49,7 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    height: "30%",
+    flex: 1,
     width: "100%",
     backgroundColor:'transparent',
     alignItems: 'center',
@@ -69,7 +69,8 @@ const styles = StyleSheet.create({
     color: "#FFF",
   },
   searchButtonContainer: {
-    padding: 10,
+    margin: 10,
+    padding: 5,
     overflow:'hidden',
     borderRadius: 5,
     backgroundColor: "#373c51"
