@@ -32,7 +32,7 @@ export default class App extends React.Component {
         <TextInput
         style={styles.textInput}
         placeholder='Enter your desired city'
-        placeholderTextColor={'#FFF'}
+        placeholderTextColor={'#50D0E3'}
         value={this.state.cityName}
         onChangeText={this.cityNameChangedHandler}
         underlineColorAndroid={"transparent"}
@@ -57,22 +57,24 @@ const styles = StyleSheet.create({
   },
   textInput: {
     width: 300,
-    borderColor: "black",
+    borderColor: "#50D0E3",
     borderWidth: 2,
     padding: 10,
     backgroundColor: "#373c51",
-    color: "#FFF",
+    color: "#50D0E3",
     margin: 10
   },
   searchButton: {
     backgroundColor: "#373c51",
-    color: "#FFF",
+    color: "#50D0E3",
   },
   searchButtonContainer: {
     margin: 10,
     padding: 5,
     overflow:'hidden',
     borderRadius: 5,
-    backgroundColor: "#373c51"
+    backgroundColor: "#373c51",
+    borderColor: "#50D0E3",
+    borderWidth: 2,
   }
 });

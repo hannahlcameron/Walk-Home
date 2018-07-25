@@ -231,13 +231,13 @@ const styles = StyleSheet.create({
   loading: {
     backgroundColor:'#373c51',
     width: (Dimensions.get('window').width*.75),
-    borderColor: '#373c51',
+    borderColor: "#50D0E3",
     borderWidth: 2,
     borderRadius: 5
 
   },
   loadingText: {
-    color: "#fff",
+    color: "#50D0E3",
     fontSize: 25,
     textAlign: 'center'
   },
@@ -247,10 +247,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderWidth: 2,
     borderRadius: 5,
-    borderColor: '#373c51'
+    borderColor: "#50D0E3"
   },
   addressText:{
-    color: '#fff',
+    color: "#50D0E3",
     fontSize: 20,
     textAlign: "center",
     alignSelf: "center",
@@ -355,12 +355,14 @@ const styles = StyleSheet.create({
   },
   closeButton: {
     backgroundColor: "#373c51",
-    color: "#FFF"
+    color: "#50D0E3"
   },
   closeButtonContainer: {
     padding: 10,
     overflow:'hidden',
+    borderWidth: 2,
     borderRadius: 5,
+    borderColor: "#50D0E3",
     backgroundColor: "#373c51"
   }
 });

@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   welcomeText: {
     fontSize: 24,
     // fontWeight: "bold",
-    color: "#fff",
+    color: "#50D0E3",
     // width: (Dimensions.get('window').width),
     alignSelf: "center",
     marginLeft: 35
