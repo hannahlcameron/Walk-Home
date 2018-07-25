@@ -174,7 +174,7 @@ s
     }
 
     return (
-      <View style={[styles.listItem, {backgroundColor: this.state.wsColor}, {borderColor: this.state.wsColor}]}>
+      <View style={[styles.listItem, {backgroundColor: this.state.wsColor}]}>
         <TouchableOpacity onPress={this.getHouseData}>
           <View style={styles.walkScore}>
             <Text style={styles.link}
@@ -203,8 +203,12 @@ const styles = StyleSheet.create({
     width: (Dimensions.get('window').width*.9),
     flex: 1,
     flexDirection: 'column',
-    borderWidth: 2,
-    borderRadius: 5
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+    borderRightWidth: 2,
+    borderLeftWidth: 2,
+    borderRadius: 5,
+    borderColor: "#373c51"
   },
   walkScore: {
     width: "100%",
@@ -222,7 +226,7 @@ const styles = StyleSheet.create({
     paddingBottom: 20
   },
   addressText:{
-    color: 'black',
+    color: '#373c51',
     fontSize: 18,
     textAlign: "center"
   }
